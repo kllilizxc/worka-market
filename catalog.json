@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "notes": [
+    {
+      "id": "worka/counter",
+      "name": "计数器",
+      "author": "Worka",
+      "description": "记录重复的小事：每次点击加一，随时清零。",
+      "source": "https://github.com/kllilizxc/worka-market/tree/main/examples/counter",
+      "tags": [
+        "示例"
+      ],
+      "icon": {
+        "type": "emoji",
+        "value": "🔢"
+      }
+    },
+    {
+      "id": "worka/greeting",
+      "name": "问候卡",
+      "author": "Worka",
+      "description": "设置一个称呼，为自己的桌面留一句问候。",
+      "source": "https://github.com/kllilizxc/worka-market/tree/main/examples/greeting",
+      "tags": [
+        "示例"
+      ],
+      "icon": {
+        "type": "emoji",
+        "value": "👋"
+      }
+    },
+    {
+      "id": "worka/checklist",
+      "name": "随手清单",
+      "author": "Worka",
+      "description": "记下接下来要做的事，完成后勾选。",
+      "source": "https://github.com/kllilizxc/worka-market/tree/main/examples/checklist",
+      "tags": [
+        "示例"
+      ],
+      "icon": {
+        "type": "emoji",
+        "value": "✅"
+      }
+    }
+  ]
+}

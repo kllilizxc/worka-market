@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "name": "计数器",
+  "scenarios": "记录重复的小事：每次点击加一，随时清零。",
+  "icon": {
+    "type": "emoji",
+    "value": "🔢"
+  },
+  "files": [
+    "view.tsx",
+    "package.json",
+    "README.md"
+  ],
+  "initialState": {
+    "count": 0
+  },
+  "config": {
+    "defaults": {},
+    "required": []
+  },
+  "onboarding": {
+    "title": "开始使用",
+    "description": "记录重复的小事：每次点击加一，随时清零。",
+    "steps": [
+      "直接使用卡片上的控件。",
+      "示例无需额外插件，不会自动执行外部任务。"
+    ]
+  }
+}

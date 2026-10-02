@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "name": "问候卡",
+  "scenarios": "设置一个称呼，为自己的桌面留一句问候。",
+  "icon": {
+    "type": "emoji",
+    "value": "👋"
+  },
+  "files": [
+    "view.tsx",
+    "package.json",
+    "README.md"
+  ],
+  "initialState": {},
+  "config": {
+    "defaults": {},
+    "required": [
+      "name"
+    ]
+  },
+  "onboarding": {
+    "title": "填写你的称呼",
+    "description": "设置一个称呼，为自己的桌面留一句问候。",
+    "steps": [
+      "在设置中填写 name。",
+      "示例无需额外插件，不会自动执行外部任务。"
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "worka-market",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate.mjs",
+    "validate:remote": "node scripts/validate.mjs --remote",
+    "test": "node --test scripts/validate.test.mjs"
+  },
+  "engines": { "node": ">=24" }
+}

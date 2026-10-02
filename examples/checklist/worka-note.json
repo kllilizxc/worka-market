@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "name": "随手清单",
+  "scenarios": "记下接下来要做的事，完成后勾选。",
+  "icon": {
+    "type": "emoji",
+    "value": "✅"
+  },
+  "files": [
+    "view.tsx",
+    "package.json",
+    "README.md"
+  ],
+  "initialState": {
+    "items": []
+  },
+  "config": {
+    "defaults": {},
+    "required": []
+  },
+  "onboarding": {
+    "title": "开始使用",
+    "description": "记下接下来要做的事，完成后勾选。",
+    "steps": [
+      "直接使用卡片上的控件。",
+      "示例无需额外插件，不会自动执行外部任务。"
+    ]
+  }
+}
