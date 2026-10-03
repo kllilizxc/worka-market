@@ -11,9 +11,13 @@
         "示例"
       ],
       "icon": {
-        "type": "emoji",
-        "value": "🔢"
-      }
+        "type": "svg",
+        "path": "assets/worka/counter/icon.svg",
+        "monochrome": false
+      },
+      "screenshots": [
+        "assets/worka/counter/preview.png"
+      ]
     },
     {
       "id": "worka/greeting",
@@ -39,8 +43,9 @@
         "示例"
       ],
       "icon": {
-        "type": "emoji",
-        "value": "✅"
+        "type": "svg",
+        "path": "assets/worka/checklist/icon.svg",
+        "monochrome": true
       }
     }
   ]

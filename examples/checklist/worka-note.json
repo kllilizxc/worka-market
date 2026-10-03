@@ -3,13 +3,15 @@
   "name": "随手清单",
   "scenarios": "记下接下来要做的事，完成后勾选。",
   "icon": {
-    "type": "emoji",
-    "value": "✅"
+    "type": "svg",
+    "path": "icon.svg",
+    "monochrome": true
   },
   "files": [
     "view.tsx",
     "package.json",
-    "README.md"
+    "README.md",
+    "icon.svg"
   ],
   "initialState": {
     "items": []

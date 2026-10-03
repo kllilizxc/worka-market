@@ -3,13 +3,15 @@
   "name": "计数器",
   "scenarios": "记录重复的小事：每次点击加一，随时清零。",
   "icon": {
-    "type": "emoji",
-    "value": "🔢"
+    "type": "svg",
+    "path": "icon.svg",
+    "monochrome": false
   },
   "files": [
     "view.tsx",
     "package.json",
-    "README.md"
+    "README.md",
+    "icon.svg"
   ],
   "initialState": {
     "count": 0
