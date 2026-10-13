@@ -1,122 +1,115 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Worka market catalog",
   "type": "object",
+  "additionalProperties": false,
   "required": [
     "schemaVersion",
-    "notes"
+    "kind",
+    "id",
+    "name",
+    "author",
+    "description",
+    "source"
   ],
-  "additionalProperties": false,
   "properties": {
-    "schemaVersion": {
-      "const": 1
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100,
+      "pattern": "^[a-z0-9][a-z0-9._-]*/[a-z0-9][a-z0-9._-]*$"
     },
-    "notes": {
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "author": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 300
+    },
+    "source": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2048,
+      "pattern": "^https://[\\w.-]+/[\\w.-]+/[\\w.-]+/tree/[a-fA-F0-9]{40}(/[^?#]*)?$"
+    },
+    "tags": {
       "type": "array",
-      "maxItems": 2000,
+      "maxItems": 10,
       "items": {
-        "type": "object",
-        "additionalProperties": false,
-        "required": [
-          "id",
-          "name",
-          "author",
-          "description",
-          "source"
-        ],
-        "properties": {
-          "id": {
-            "type": "string",
-            "minLength": 1,
-            "maxLength": 100,
-            "pattern": "^[a-z0-9][a-z0-9._-]*/[a-z0-9][a-z0-9._-]*$"
-          },
-          "name": {
-            "type": "string",
-            "minLength": 1,
-            "maxLength": 100
-          },
-          "author": {
-            "type": "string",
-            "minLength": 1,
-            "maxLength": 100
-          },
-          "description": {
-            "type": "string",
-            "minLength": 1,
-            "maxLength": 300
-          },
-          "source": {
-            "type": "string",
-            "minLength": 1,
-            "maxLength": 2048,
-            "pattern": "^https://github\\.com/[\\w.-]+/[\\w.-]+(/tree/.+)?/?$"
-          },
-          "tags": {
-            "type": "array",
-            "maxItems": 10,
-            "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 30
+      }
+    },
+    "screenshots": {
+      "type": "array",
+      "maxItems": 5,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 500,
+        "pattern": "^assets/[\\w./-]+$"
+      }
+    },
+    "icon": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "type",
+            "value"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "emoji"
+            },
+            "value": {
               "type": "string",
               "minLength": 1,
-              "maxLength": 30
+              "maxLength": 32
             }
-          },
-          "screenshots": {
-            "type": "array",
-            "maxItems": 5,
-            "items": {
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "type",
+            "path"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "svg"
+            },
+            "path": {
               "type": "string",
               "minLength": 1,
               "maxLength": 500,
-              "pattern": "^assets/[\\w./-]+$"
+              "pattern": "^assets/[\\w./-]+\\.svg$"
+            },
+            "monochrome": {
+              "type": "boolean"
             }
-          },
-          "icon": {
-            "oneOf": [
-              {
-                "type": "object",
-                "required": [
-                  "type",
-                  "value"
-                ],
-                "additionalProperties": false,
-                "properties": {
-                  "type": {
-                    "const": "emoji"
-                  },
-                  "value": {
-                    "type": "string",
-                    "minLength": 1,
-                    "maxLength": 32
-                  }
-                }
-              },
-              {
-                "type": "object",
-                "required": [
-                  "type",
-                  "path"
-                ],
-                "additionalProperties": false,
-                "properties": {
-                  "type": {
-                    "const": "svg"
-                  },
-                  "path": {
-                    "type": "string",
-                    "minLength": 1,
-                    "maxLength": 500,
-                    "pattern": "^assets/[\\w./-]+\\.svg$"
-                  },
-                  "monochrome": {
-                    "type": "boolean"
-                  }
-                }
-              }
-            ]
           }
         }
-      }
+      ]
+    },
+    "schemaVersion": {
+      "const": 2
+    },
+    "kind": {
+      "enum": [
+        "note",
+        "desktop"
+      ]
     }
-  }
+  },
+  "title": "Worka store entry (one JSON object per line)"
 }

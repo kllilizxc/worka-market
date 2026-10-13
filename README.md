@@ -1,25 +1,20 @@
-# Worka 便笺市场
+# Worka 商店
 
-便笺源码由作者维护，本仓库维护可发现的目录。Worka 读取 `catalog.json`，从作者仓库的固定 Git 提交添加便笺。
+本仓库维护便笺和桌面的发现目录。商品源码与详细 README 由来源仓库维护；商店保存固定 Git 引用、简短介绍、图标和截图。
 
-每次添加都会创建独立实例，拥有自己的数据、配置和名称。添加后的更新由实例的安装来源决定；目录撤下或改源不会删除或重定向已有便笺。
+`catalog.jsonl` 是唯一编辑入口，每行一个 JSON 对象。`kind` 为 `note` 或 `desktop`；来源必须固定到完整 40 位 Git commit。便笺目录包含 `worka-note.json`，桌面目录包含 v3 `desktop.json`。桌面导入会创建新桌面，可选择成员便笺并保留适用的分组和连线。
 
-## 使用
-
-在支持市场的 Worka 版本中打开技能库 → 市场。也可以使用“从链接添加”，输入 GitHub 仓库或目录链接。自动运行默认暂停，添加后通过“开始使用”完成设置。
-
-首批三个独立公开示例位于 `examples/`：计数器、问候卡、随手清单。它们无需额外后台插件，适合体验安装、配置和独立实例。作者也可以在自己的公开仓库发布便笺。
-
-## 投稿
-
-阅读 [CONTRIBUTING.md](CONTRIBUTING.md)，修改目录并提交 PR。只需 Node.js 24，无安装依赖：
+新增、更新和下架商品均通过 PR。`main` 要求 PR，规则覆盖管理员；投稿分支可以提交，主分支不能直接推送。PR 合并后客户端刷新商店即可读取新目录。
 
 ```sh
-npm run validate
-npm test
-npm run validate:remote
+node scripts/validate.mjs --write-legacy
+node --test scripts/validate.test.mjs
+node scripts/validate.mjs
+node scripts/validate.mjs --remote
 ```
 
-`catalog.schema.json` 定义格式。图标与截图保存在 `assets/`。维护者合并后客户端刷新即可发现条目，无需发布 Worka 新版本。
+`catalog.schema.json` 定义单行格式。`assets/` 保存图标与截图；不要提交账号、实例数据、工作报告或凭据。远端验证只读取已配置站点。
 
-目录采用 [Obsidian 社区目录](https://github.com/obsidianmd/obsidian-releases) 的集中列表与 PR 维护方式。问题反馈请优先前往相应便笺的作者仓库。
+`catalog.json` 是为旧客户端保留的便笺目录快照，由校验命令生成，不独立编辑；桌面商品只在 JSONL 中出现。
+
+详细投稿要求见 [CONTRIBUTING.md](CONTRIBUTING.md)。
