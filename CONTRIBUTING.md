@@ -1,21 +1,12 @@
-# 添加或更新便笺
+# 投稿
 
-1. 发布公开 GitHub 仓库；根目录或选定子目录必须包含 `worka-note.json`，列出明确发布文件和安全初值。
-2. README 说明用途、操作方式、配置项和依赖的后台能力。用户的业务数据、凭据、账号和机器路径不作为发布默认值。
-3. 在 `catalog.json` 新增条目。ID 使用 `作者/便笺名` 格式，永久稳定；已有 ID 不分配给另一个作品。
-4. 名称和图标沿用发布声明。SVG 复制到 `assets/<id>/icon.svg`；截图可选。修改这些素材时同步提交目录 PR。
-5. 本地运行校验，在 PR 中说明测试的 Worka 版本、安装步骤及首次配置。
+1. 在作者自己的仓库发布商品源码，并取得固定提交。便笺提供 `worka-note.json`；桌面提供 v3 `desktop.json`，成员便笺可以使用固定远端来源或符合发布契约的随包文件。
+2. 从 `main` 建投稿分支（没有仓库写权限时使用 fork），在 `catalog.jsonl` 新增或修改一行。ID 在更新中保持稳定；每行包含 `schemaVersion: 2`、`kind`、`id`、`name`、`author`、`description`、`source`，可选 `tags`、`icon`、`screenshots`。
+3. `source` 必须是 HTTPS GitHub 来源并固定完整 commit，例如 `https://github.com/example/notes/tree/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/template`。企业商店另在 `market.config.json` 中限定来源站点。
+4. SVG 图标和截图放在 `assets/`，引用仓库内路径；详细说明从商品来源仓库的 README 读取。
+5. 运行 README 中的校验命令，并在隔离 Worka 环境验证。桌面必须检查成员选择、取消导入、连线绑定及自己的账号设置；仅源码可下载不代表业务可运行。
+6. 提交 PR，说明用途、依赖、已验证和未验证项目。作者不能通过直接推 `main` 上架或更新。仓库无可用 fork 时，向维护者申请投稿分支权限。
 
-## 字段
+`catalog.json` 由 JSONL 的便笺行生成。修改目录后执行 `node scripts/validate.mjs --write-legacy`；下架只影响发现目录，不删除已安装实例。
 
-必填：`id`、`name`、`author`、`description`、`source`。可选：`tags`、`icon`、`screenshots`。
-
-`source` 支持 `https://github.com/owner/repo` 和 `https://github.com/owner/repo/tree/ref/path`。根链接跟随默认分支；分支来源在安装时固定实际 commit，tag/commit 来源保持固定版本。无需把最新版本或 commit 重复写到目录中。
-
-图标支持 `{ "type": "emoji", "value": "🌤️" }` 或 `{ "type": "svg", "path": "assets/weather/icon.svg", "monochrome": false }`。只有没有作者图标时才使用默认图标。
-
-## 维护者核验
-
-CI 验证目录、重复 ID、图片路径以及远端发布声明。远端检查只读取 Git 文件，不执行作者脚本。合并前在隔离 Worka 桌面实际添加，核对配置说明、主要操作和图标，并记录使用的 Worka 版本。格式检查通过不代表交互已经验收。
-
-普通源码更新直接发布到作者仓库；目录信息变化通过 PR。撤下时删除条目，不删除用户实例。迁移来源只作用于新安装，已有安装保留原来源。第一版不管理评分、下载量、账号或付款。
+不要把私有实例 state、账号 config、凭据、缓存、历史或本机工作目录作为商品初始内容。桌面布局及作者声明的安全初始值由已有桌面发布契约负责。
