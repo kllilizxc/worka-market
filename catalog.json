@@ -6,7 +6,7 @@
       "name": "微信",
       "author": "kllilizxc",
       "description": "一键初始化本机微信只读接入，由 Agent 准备读取组件；首次登录与 macOS 系统授权由本人完成。",
-      "source": "https://github.com/kllilizxc/dsh-worka-wechat/tree/de4bb4f93908827b4c53891664e205e273663b15/template",
+      "source": "https://github.com/kllilizxc/dsh-worka-wechat/tree/9d7c6c7b098f6a82bc7891b93d645db0a4527fd2/template",
       "tags": [
         "微信",
         "消息",
