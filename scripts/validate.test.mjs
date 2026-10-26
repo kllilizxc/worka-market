@@ -20,3 +20,10 @@ test('rejects credential URLs, disallowed origins and escaping assets',async()=>
  await assert.rejects(validateCatalog([{...entry,screenshots:['assets/../secret.png']}]));
  assert.deepEqual(parseSource(source),{repository:'https://github.com/example/notes',tree:['a'.repeat(40),'template']});
 });
+
+ test('main tracking retains the immutable fallback for existing clients',async()=>{
+  const tracked={...entry,trackingRef:'main'};
+  await validateCatalog([tracked]);
+  assert.equal(legacyCatalog([tracked]).notes[0].source,source);
+  for(const trackingRef of ['latest','dev','',null,true]) await assert.rejects(validateCatalog([{...entry,trackingRef}]));
+ });

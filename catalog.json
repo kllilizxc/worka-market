@@ -14,9 +14,11 @@
         "只读"
       ],
       "icon": {
-        "type": "emoji",
-        "value": "💬"
-      }
+        "type": "svg",
+        "path": "assets/kllilizxc/wechat/icon.svg",
+        "monochrome": false
+      },
+      "trackingRef": "main"
     },
     {
       "id": "worka/checklist",
@@ -31,7 +33,8 @@
         "type": "svg",
         "path": "assets/worka/checklist/icon.svg",
         "monochrome": true
-      }
+      },
+      "trackingRef": "main"
     },
     {
       "id": "worka/counter",
@@ -49,7 +52,8 @@
       },
       "screenshots": [
         "assets/worka/counter/preview.png"
-      ]
+      ],
+      "trackingRef": "main"
     },
     {
       "id": "worka/greeting",
@@ -63,7 +67,8 @@
       "icon": {
         "type": "emoji",
         "value": "👋"
-      }
+      },
+      "trackingRef": "main"
     }
   ]
 }
