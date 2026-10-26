@@ -109,6 +109,12 @@
         "note",
         "desktop"
       ]
+    },
+    "trackingRef": {
+      "type": "string",
+      "enum": [
+        "main"
+      ]
     }
   },
   "title": "Worka store entry (one JSON object per line)"

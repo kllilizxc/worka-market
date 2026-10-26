@@ -76,6 +76,7 @@ export async function validateRemote(catalog) {
   try {
     for (const note of catalog) {
       const { repository, tree } = parseSource(note.source);
+      if (note.trackingRef) tree[0] = note.trackingRef;
       let repo = repos.get(repository);
       if (!repo) { repo = resolve(temp, String(repos.size)); await git(temp, 'clone', '--bare', '--filter=blob:none', '--', repository + '.git', repo); repos.set(repository, repo); }
       let commit, directory = '.';
@@ -101,7 +102,7 @@ export async function validateRemote(catalog) {
           } else if (member.source) {
             if (!member.source.path || member.source.path.startsWith('/') || member.source.path.split(/[\\/]/).includes('..')) throw new Error('Invalid member source path');
             const manifest = JSON.parse(await git(repo, 'show', `${commit}:${prefix}${member.source.path}/worka-note.json`));
-            if (manifest.schemaVersion !== 1 || !Array.isArray(manifest.files)) throw new Error('Invalid bundled member publication');
+            if (![1, 2].includes(manifest.schemaVersion) || !Array.isArray(manifest.files)) throw new Error('Invalid bundled member publication');
           }
         }
         for (const relation of desktop.relations ?? []) if (!Array.isArray(relation.nodeKeys) || relation.nodeKeys.some(key => !keys.has(key))) throw new Error('Invalid desktop connection');
@@ -109,7 +110,8 @@ export async function validateRemote(catalog) {
         continue;
       }
       const manifest = JSON.parse(await git(repo, 'show', `${commit}:${prefix}worka-note.json`));
-      if (manifest.schemaVersion !== 1 || manifest.name !== note.name || !Array.isArray(manifest.files)) throw new Error(`Publication name/manifest mismatch: ${note.id}`);
+      if (![1, 2].includes(manifest.schemaVersion) || manifest.name !== note.name || !Array.isArray(manifest.files)) throw new Error(`Publication name/manifest mismatch: ${note.id}`);
+      for (const provider of Object.values(manifest.providers ?? {})) parseSource(provider.source);
       for (const path of manifest.files) {
         if (typeof path !== 'string' || path.startsWith('/') || path.includes('\\') || path.split('/').some(p => !p || p === '..' || p === '.')) throw new Error(`Invalid publication path: ${note.id}`);
         const treeEntry = await git(repo, 'ls-tree', commit, '--', prefix + path);

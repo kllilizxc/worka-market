@@ -18,3 +18,9 @@ node scripts/validate.mjs --remote
 `catalog.json` 是为旧客户端保留的便笺目录快照，由校验命令生成，不独立编辑；桌面商品只在 JSONL 中出现。
 
 详细投稿要求见 [CONTRIBUTING.md](CONTRIBUTING.md)。
+
+### 跟随 main
+
+商品可声明 `"trackingRef":"main"`。支持此字段的 Worka 会在打开详情及检查更新时解析来源仓库的 main；预览与安装锁定解析得到的同一提交，已安装便笺仍由用户确认更新。此后推送 main 即可提供新版，无需每次更新目录。
+
+`source` 继续保留完整 commit，作为旧客户端的固定发布快照；未声明 trackingRef 的商品也保持固定版本。目录缓存仅缓存商品声明，不缓存 main 的更新检查结果。`validate:remote` 对跟随条目检查 main，其余条目检查固定提交。
