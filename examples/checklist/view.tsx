@@ -5,7 +5,7 @@ import { Checkbox } from '@heroui/react/checkbox';
 import { TextField } from '@heroui/react/textfield';
 import { Label } from '@heroui/react/label';
 import { Input } from '@heroui/react/input';
-import { EmptyState, List, ListRow, NoteSurface, NoteIcon, Section, Tile, Toolbar, useMessages, QueryState, defineNoteView, useMutation, useNote } from '@dsh-workbench/react';
+import { EmptyState, List, ListRow, NoteSurface, NoteHeader, Toolbar,  useMessages, QueryState, defineNoteView, useMutation, useNote } from '@dsh-workbench/react';
 
 const messages = defineMessages('zh-CN', {"nextItem": "下一件小事", "add": "添加", "previous": "上一页", "next": "下一页", "verify": "核对保存结果", "empty": "还没有事项", "emptyDescription": "先写下一件。"}, { en: {"nextItem": "Next small task", "add": "Add", "previous": "Previous", "next": "Next", "verify": "Check saved result", "empty": "No tasks yet", "emptyDescription": "Write down one thing to do."} });
 
@@ -28,7 +28,7 @@ function Checklist() {
     if (unknown === add) { if (await add.retry()) { setText(''); page.reset(); } }
     else if (unknown) await unknown.retry();
   }
-  return <NoteSurface header={<><Section title={<span style={{ display: 'flex', alignItems: 'center', gap: 8, minWidth: 0 }}><Tile size="sm"><NoteIcon icon={metadata.icon} size={16} /></Tile><span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{metadata.name}</span></span>} /><Toolbar>
+  return <NoteSurface header={<><NoteHeader name={metadata.name} icon={metadata.icon} /><Toolbar>
     <TextField value={text} onChange={setText} isDisabled={busy} style={{ flex: 1, minWidth: 0 }}>
       <Label>{copy.nextItem}</Label><Input onKeyDown={event => { if (event.key === 'Enter') void submit(); }} />
     </TextField>
@@ -42,7 +42,7 @@ function Checklist() {
     {unknown && <Button variant="secondary" onPress={() => void retryUnknown()}>{copy.verify}</Button>}
   </>}>
     <QueryState query={page}>{data => data.items.length
-      ? <List>{(mode === 'compact' ? data.items.slice(0, 2) : data.items).map(item =>
+      ? <List>{(mode === 'compact' ? data.items.slice(0, 3) : data.items).map(item =>
         <ListRow key={item.id} title={<Checkbox isSelected={item.done} isDisabled={busy}
           onChange={done => void setDone.mutate({ id: item.id, done })}><Checkbox.Control><Checkbox.Indicator /></Checkbox.Control><Checkbox.Content>{item.text}</Checkbox.Content></Checkbox>} />)}</List>
       : <EmptyState title={copy.empty} description={copy.emptyDescription} />}</QueryState>
