@@ -1,18 +1,5 @@
-## 商品与用途
+## Listing
 
-类型：便笺 / 桌面
+Include the listing ID, repository, package path and whether this PR adds or edits a listing. Describe how the package was opened in Worka.
 
-稳定 ID：
-
-固定源码链接：
-
-## 验证
-
-- [ ] JSONL、兼容快照、资源及固定提交通过校验
-- [ ] 已在隔离 Worka 环境导入并操作
-- [ ] 桌面已检查成员选择、取消和连线（便笺填不适用）
-- [ ] 发布定义不包含实例数据、账号配置或凭据
-
-依赖与首次设置：
-
-实际验证与尚未验证项：
+- [ ] The v4 catalog and package paths passed validation.
