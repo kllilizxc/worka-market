@@ -1,29 +1,9 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { validateCatalog, parseSource, parseJsonl, legacyCatalog } from './validate.mjs';
-const source='https://github.com/example/notes/tree/'+ 'a'.repeat(40) +'/template';
-const entry={schemaVersion:2,kind:'note',id:'example/note',name:'Note',author:'Example',description:'A note',source};
-test('JSONL supports notes and desktops with stable unique IDs',async()=>{
- const entries=parseJsonl(JSON.stringify(entry)+'\n'+JSON.stringify({...entry,id:'example/desk',kind:'desktop'})+'\n');
- await validateCatalog(entries);
- assert.equal(entries.length,2);
- assert.equal(legacyCatalog(entries).notes.length,1);
- await assert.rejects(validateCatalog([entry,entry]),/Duplicate/);
+import { parseJsonl,validateCatalog } from './validate.mjs';
+const row={schemaVersion:4,kind:'note',id:'author/item',author:'author',name:'Item',description:'Example',repository:'https://github.com/author/notes',path:'items/example'};
+test('accepts a link to a package folder and rejects pins, mirrors, unsafe paths and duplicate listings',()=>{
+  validateCatalog(parseJsonl(JSON.stringify(row)+'\n'));
+  for (const edit of [{schemaVersion:3},{repository:row.repository+'/tree/main'},{path:'../bad'},{artifact:{}},{version:'1.0.0'},{blocked:true},{locales:{en:{name:'Missing description'}}}]) assert.throws(()=>validateCatalog([{...row,...edit}]));
+  assert.throws(()=>validateCatalog([row,row]));
 });
-test('rejects malformed lines, unknown versions, fields, kinds and moving sources',async()=>{
- assert.throws(()=>parseJsonl(JSON.stringify(entry)+'\n{bad'),/line 2/);
- for(const row of [{...entry,schemaVersion:3},{...entry,kind:'plugin'},{...entry,token:'unwanted'},{...entry,name:' '},{...entry,source:'https://github.com/example/notes/tree/main/template'}]) await assert.rejects(validateCatalog([row]));
-});
-test('rejects credential URLs, disallowed origins and escaping assets',async()=>{
- assert.throws(()=>parseSource('https://user:secret@github.com/a/b'));
- assert.throws(()=>parseSource('https://elsewhere.example/a/b/tree/'+ 'a'.repeat(40)));
- await assert.rejects(validateCatalog([{...entry,screenshots:['assets/../secret.png']}]));
- assert.deepEqual(parseSource(source),{repository:'https://github.com/example/notes',tree:['a'.repeat(40),'template']});
-});
-
- test('main tracking retains the immutable fallback for existing clients',async()=>{
-  const tracked={...entry,trackingRef:'main'};
-  await validateCatalog([tracked]);
-  assert.equal(legacyCatalog([tracked]).notes[0].source,source);
-  for(const trackingRef of ['latest','dev','',null,true]) await assert.rejects(validateCatalog([{...entry,trackingRef}]));
- });

@@ -8,7 +8,8 @@
     "name",
     "author",
     "description",
-    "source"
+    "repository",
+    "path"
   ],
   "properties": {
     "id": {
@@ -31,12 +32,6 @@
       "type": "string",
       "minLength": 1,
       "maxLength": 300
-    },
-    "source": {
-      "type": "string",
-      "minLength": 1,
-      "maxLength": 2048,
-      "pattern": "^https://[\\w.-]+/[\\w.-]+/[\\w.-]+/tree/[a-fA-F0-9]{40}(/[^?#]*)?$"
     },
     "tags": {
       "type": "array",
@@ -102,7 +97,7 @@
       ]
     },
     "schemaVersion": {
-      "const": 2
+      "const": 4
     },
     "kind": {
       "enum": [
@@ -110,11 +105,38 @@
         "desktop"
       ]
     },
-    "trackingRef": {
+    "repository": {
       "type": "string",
-      "enum": [
-        "main"
-      ]
+      "maxLength": 2048,
+      "pattern": "^https://[\\w.-]+/[\\w.-]+/[\\w.-]+$"
+    },
+    "path": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2048
+    },
+    "locales": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "name",
+          "description"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 300
+          }
+        }
+      }
     }
   },
   "title": "Worka store entry (one JSON object per line)"

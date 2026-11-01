@@ -1,4 +1,4 @@
-name: Validate catalog
+name: Validate v4 listing schema and package paths
 on:
   pull_request:
   push:
