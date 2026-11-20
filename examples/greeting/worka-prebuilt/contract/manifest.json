@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "codeVersion": "1.0.1",
+  "codeVersion": "707c446a5881-3d1eadc4",
   "status": "ready",
   "files": [
     "SKILL.md",
@@ -14,5 +14,7 @@
     "name": "worka-example-greeting",
     "description": "用配置的称呼显示问候。"
   },
-  "typeErrors": []
+  "typeErrors": [
+    "view.tsx:2:44: error TS2305: Module '\"@dsh-workbench/react\"' has no exported member 'useMessages'."
+  ]
 }

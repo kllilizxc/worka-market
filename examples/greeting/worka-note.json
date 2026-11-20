@@ -1,5 +1,5 @@
 {
-  "version": "1.0.1",
+  "version": "1.0.2",
   "onboarding": {
     "title": "填写你的称呼",
     "description": "设置一个称呼，为自己的桌面留一句问候。",
@@ -37,12 +37,11 @@
     "worka-prebuilt/zod-config.mjs",
     "worka-prebuilt/index.html",
     "worka-prebuilt/entry-bundle.js",
-    "worka-prebuilt/view-2m399q8b.js",
     "worka-prebuilt/view-runtime-57ccjbv6.js",
     "worka-prebuilt/view-runtime.mjs",
     "worka-prebuilt/entry-bundle.tailwind.css",
+    "worka-prebuilt/view-87vnfrrf.js",
     "worka-prebuilt/actions.mjs",
-    "worka-prebuilt/entry-bundle.css",
     "worka-prebuilt/manifest.json"
   ]
 }

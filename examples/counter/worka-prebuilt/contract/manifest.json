@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "codeVersion": "1.0.1",
+  "codeVersion": "f396ecfa1038-a22fdce5",
   "status": "ready",
   "files": [
     "SKILL.md",
@@ -14,5 +14,9 @@
     "name": "worka-example-counter",
     "description": "记录和读取简单计数。"
   },
-  "typeErrors": []
+  "typeErrors": [
+    "view.tsx:3:35: error TS2305: Module '\"@dsh-workbench/react\"' has no exported member 'Toolbar'.",
+    "view.tsx:3:44: error TS2305: Module '\"@dsh-workbench/react\"' has no exported member 'useMessages'.",
+    "view.tsx:3:69: error TS2305: Module '\"@dsh-workbench/react\"' has no exported member 'Stat'."
+  ]
 }

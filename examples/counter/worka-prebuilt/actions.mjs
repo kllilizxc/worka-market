@@ -22,9 +22,9 @@ __export(exports_actions, {
   reset: () => reset
 });
 
-// ../../worka-market-compat-plan-20261028/sdk/runtime/src/bridge.ts
+// ../../../../sdk/runtime/src/bridge.ts
 var DEFAULT_REQUEST_TIMEOUT_MS = 5 * 60000;
-// ../../worka-market-compat-plan-20261028/node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/util.js
+// ../../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/util.js
 function getEnumValues(entries) {
   const numericValues = Object.values(entries).filter((v) => typeof v === "number");
   const values = Object.entries(entries).filter(([k, _]) => numericValues.indexOf(+k) === -1).map(([_, v]) => v);
@@ -570,7 +570,7 @@ function constantCatch(value) {
   return fn;
 }
 
-// ../../worka-market-compat-plan-20261028/node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/core.js
+// ../../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/core.js
 var _a;
 var _zodDesc = { value: undefined, enumerable: false };
 var _E = "captureStackTrace" in Error ? Error : null;
@@ -689,7 +689,7 @@ function config(newConfig) {
     Object.assign(globalConfig, newConfig);
   return globalConfig;
 }
-// ../../worka-market-compat-plan-20261028/node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/errors.js
+// ../../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/errors.js
 function _getMessage() {
   const internals = this._zod;
   internals.message ?? (internals.message = JSON.stringify(internals.def, jsonStringifyReplacer, 2));
@@ -804,7 +804,7 @@ function formatError(error, mapper = (issue) => issue.message) {
   return fieldErrors;
 }
 
-// ../../worka-market-compat-plan-20261028/node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/parse.js
+// ../../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/parse.js
 function finalizeParams(callee, params) {
   return { callee: params?.callee ?? callee, Err: params?.Err };
 }
@@ -951,7 +951,7 @@ var _safeEncodeAsync = (_Err) => async (schema, value, _ctx) => {
 var _safeDecodeAsync = (_Err) => async (schema, value, _ctx) => {
   return _safeParseAsync(_Err)(schema, value, _ctx);
 };
-// ../../worka-market-compat-plan-20261028/node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/regexes.js
+// ../../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/regexes.js
 var cuid = /^[cC][0-9a-z]{6,}$/;
 var cuid2 = /^[0-9a-z]+$/;
 var ulid = /^[0-7][0-9A-HJKMNP-TV-Za-hjkmnp-tv-z]{25}$/;
@@ -1009,7 +1009,7 @@ var _null = /^null$/i;
 var lowercase = /^[^A-Z]*$/;
 var uppercase = /^[^a-z]*$/;
 
-// ../../worka-market-compat-plan-20261028/node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/checks.js
+// ../../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/checks.js
 var $ZodCheck = /* @__PURE__ */ $constructor("$ZodCheck", (inst, def) => {
   var _a;
   inst._zod ?? (inst._zod = {});
@@ -1325,7 +1325,7 @@ var $ZodCheckOverwrite = /* @__PURE__ */ $constructor("$ZodCheckOverwrite", (ins
   };
 });
 
-// ../../worka-market-compat-plan-20261028/node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/doc.js
+// ../../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/doc.js
 class Doc {
   constructor(args = [], closed = {}) {
     this.content = [];
@@ -1367,14 +1367,14 @@ ${content.join(`
   }
 }
 
-// ../../worka-market-compat-plan-20261028/node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/versions.js
+// ../../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/versions.js
 var version = {
   major: 4,
   minor: 6,
   patch: 1
 };
 
-// ../../worka-market-compat-plan-20261028/node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/schemas.js
+// ../../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/schemas.js
 var $ZodType = /* @__PURE__ */ $constructor("$ZodType", (inst, def) => {
   var _a;
   inst ?? (inst = {});
@@ -2758,7 +2758,7 @@ var $ZodProperties = /* @__PURE__ */ $constructor("$ZodProperties", (inst, def) 
     yield this;
   }
 });
-// ../../worka-market-compat-plan-20261028/node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/memoizer.js
+// ../../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/memoizer.js
 class $ZodCyclicError extends Error {
   constructor() {
     super(`Cannot parse a reference cycle that closes through a transform`);
@@ -3030,7 +3030,7 @@ function isBackEdge(ctx, value) {
   const backEdges = ctx[STATE]?.backEdges;
   return backEdges !== undefined && isRef(value) && backEdges.has(value);
 }
-// ../../worka-market-compat-plan-20261028/node_modules/.bun/zod@4.6.1/node_modules/zod/v4/locales/en.js
+// ../../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/locales/en.js
 var error = () => {
   const Sizable = {
     string: { unit: "characters", verb: "to have" },
@@ -3151,7 +3151,7 @@ function en_default() {
     localeError: error()
   };
 }
-// ../../worka-market-compat-plan-20261028/node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/registries.js
+// ../../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/registries.js
 var _a2;
 class $ZodRegistry {
   constructor() {
@@ -3198,7 +3198,7 @@ function registry() {
 }
 (_a2 = globalThis).__zod_globalRegistry ?? (_a2.__zod_globalRegistry = registry());
 var globalRegistry = globalThis.__zod_globalRegistry;
-// ../../worka-market-compat-plan-20261028/node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/api.js
+// ../../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/api.js
 function _string(Class, params) {
   return new Class({
     type: "string",
@@ -3648,7 +3648,7 @@ function _check(fn, params) {
   ch._zod.check = fn;
   return ch;
 }
-// ../../worka-market-compat-plan-20261028/node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/to-json-schema.js
+// ../../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/to-json-schema.js
 function assignProps(target, ...sources) {
   for (const source of sources) {
     for (const key of Reflect.ownKeys(source)) {
@@ -4171,7 +4171,7 @@ var createStandardJSONSchemaMethod = (schema, io, processors = {}) => (params) =
   extractDefs(ctx, schema);
   return finalize(ctx, schema);
 };
-// ../../worka-market-compat-plan-20261028/node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/json-schema-processors.js
+// ../../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/json-schema-processors.js
 var narrowMin = (agg, key, value) => {
   if (agg[key] === undefined || value > agg[key])
     agg[key] = value;
@@ -4942,7 +4942,7 @@ function toJSONSchema(input, params) {
   extractDefs(ctx, input);
   return finalize(ctx, input);
 }
-// ../../worka-market-compat-plan-20261028/node_modules/.bun/zod@4.6.1/node_modules/zod/v4/classic/errors.js
+// ../../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/classic/errors.js
 var _installedErrorProtos = /* @__PURE__ */ new WeakSet([Object.prototype, Error.prototype]);
 function _lazyMethod(proto, key, make) {
   Object.defineProperty(proto, key, {
@@ -4987,7 +4987,7 @@ var ZodRealError = /* @__PURE__ */ $constructor("ZodError", initializer2, undefi
   Parent: Error
 });
 
-// ../../worka-market-compat-plan-20261028/node_modules/.bun/zod@4.6.1/node_modules/zod/v4/classic/parse.js
+// ../../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/classic/parse.js
 var parse2 = /* @__PURE__ */ _parse(ZodRealError);
 var parseAsync = /* @__PURE__ */ _parseAsync(ZodRealError);
 var safeParse = /* @__PURE__ */ _safeParse(ZodRealError);
@@ -5001,7 +5001,7 @@ var safeDecode = /* @__PURE__ */ _safeDecode(ZodRealError);
 var safeEncodeAsync = /* @__PURE__ */ _safeEncodeAsync(ZodRealError);
 var safeDecodeAsync = /* @__PURE__ */ _safeDecodeAsync(ZodRealError);
 
-// ../../worka-market-compat-plan-20261028/node_modules/.bun/zod@4.6.1/node_modules/zod/v4/classic/schemas.js
+// ../../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/classic/schemas.js
 function _ensureDefaultLocale() {
   if (!globalConfig.localeError)
     config(en_default());
@@ -5852,7 +5852,26 @@ function refine(fn, _params = {}) {
 function superRefine(fn, params) {
   return _superRefine(fn, params);
 }
-// ../../worka-market-compat-plan-20261028/sdk/runtime/src/collections.ts
+// ../../../../sdk/runtime/src/record-routing.ts
+function validateRecordRouting(value) {
+  if (value === undefined)
+    return [];
+  if (!Array.isArray(value) || value.length > 32)
+    throw Error("Invalid record routing declarations");
+  const pointer = (v) => typeof v === "string" && v.startsWith("/") && v.length <= 512;
+  return value.map((raw) => {
+    if (!raw || typeof raw !== "object")
+      throw Error("Invalid record routing declaration");
+    const d = raw;
+    if (Object.keys(d).some((key) => !["collection", "query", "input", "items", "next", "route", "id", "label", "aliases", "session", "links", "identities"].includes(key)) || !!d.collection === !!d.query || [d.collection, d.query].some((v) => v !== undefined && !/^[A-Za-z][A-Za-z\d_-]*$/.test(v)) || d.route !== undefined && (!d.route || typeof d.route.path !== "string" || !d.route.path.startsWith("/") || typeof d.route.param !== "string" || !d.route.path.split("/").includes(":" + d.route.param)) || !pointer(d.id) || [d.label, d.session, d.items, d.next].some((v) => v !== undefined && !pointer(v)) || d.query && !d.items || d.aliases !== undefined && (!Array.isArray(d.aliases) || d.aliases.length > 16 || d.aliases.some((value) => typeof value === "string" ? !pointer(value) : !value || !pointer(value.items) || !pointer(value.id))) || d.links !== undefined && (!Array.isArray(d.links) || d.links.length > 32 || d.links.some((link) => !link || !(link.noteId === "$self" || pointer(link.noteId)) || !pointer(link.recordId))) || d.identities !== undefined && (!Array.isArray(d.identities) || d.identities.length > 16 || d.identities.some((key) => !key || typeof key.namespace !== "string" || !key.namespace.trim() || !pointer(key.value))))
+      throw Error("Invalid record routing declaration");
+    if (d.input !== undefined && (!d.input || typeof d.input !== "object" || Array.isArray(d.input)))
+      throw Error("Invalid record routing query input");
+    return JSON.parse(JSON.stringify(d));
+  });
+}
+
+// ../../../../sdk/runtime/src/collections.ts
 var pageInput = /* @__PURE__ */ (() => strictObject({ cursor: string2().min(1).max(32768).optional() }))();
 var identifier = /^[A-Za-z][A-Za-z\d_-]*$/;
 var idSchema = /* @__PURE__ */ (() => string2().min(1).max(512))();
@@ -5904,7 +5923,7 @@ function validatePageOptions(declaration, options = {}) {
   return options;
 }
 
-// ../../worka-market-compat-plan-20261028/sdk/runtime/src/json-value.ts
+// ../../../../sdk/runtime/src/json-value.ts
 function assertJson(value) {
   const seen = new Set;
   const invalid = () => {
@@ -5966,7 +5985,7 @@ function freezeJson(value) {
   return copy;
 }
 
-// ../../worka-market-compat-plan-20261028/sdk/runtime/src/triggers.ts
+// ../../../../sdk/runtime/src/triggers.ts
 var triggerKey = Symbol.for("worka.note-triggers.v3");
 function defineTriggers(note, declarations) {
   if (!Array.isArray(declarations) || declarations.length > 32)
@@ -6020,10 +6039,19 @@ function triggerContracts(value, note) {
   });
 }
 
-// ../../worka-market-compat-plan-20261028/sdk/runtime/src/contracts.ts
-var NOTE_ABI = 3;
+// ../../../../sdk/runtime/src/contracts.ts
+var NOTE_ABI = 4;
 
-// ../../worka-market-compat-plan-20261028/sdk/runtime/src/capabilities.ts
+// ../../../../sdk/runtime/src/operation-error.ts
+class OperationRejectedError extends Error {
+  code = "operation-rejected";
+  constructor(message) {
+    super(message);
+    this.name = "OperationRejectedError";
+  }
+}
+
+// ../../../../sdk/runtime/src/capabilities.ts
 var definitionKey = Symbol.for("worka.note-capability.v3");
 var namesKey = Symbol.for("worka.note-operation-names.v3");
 var registry2 = globalThis;
@@ -6040,8 +6068,10 @@ function operation(kind, definition, handler) {
     assertJson(input);
     const value = await handler(context, input);
     if (definition.output === undefined) {
-      if (value !== undefined)
-        throw new Error("An operation without output must not return a business value");
+      if (value !== undefined) {
+        const message = "An operation without output must not return a business value";
+        throw kind === "mutation" ? new OperationRejectedError(message) : new Error(message);
+      }
       return null;
     }
     const result = await outputSchema.safeParseAsync(value);
@@ -6050,7 +6080,19 @@ function operation(kind, definition, handler) {
     assertJson(result.data);
     return result.data;
   };
-  const captured = Object.freeze({ ...definition, kind, input: inputSchema, output: outputSchema, execute });
+  if (definition.idempotent === true && definition.receipt !== undefined && definition.receipt !== "idempotent")
+    throw new Error("idempotent: true conflicts with a non-idempotent receipt declaration");
+  if (definition.idempotent === false && definition.receipt === "idempotent")
+    throw new Error('idempotent: false conflicts with receipt: "idempotent"');
+  const normalizedReceipt = definition.idempotent === true ? "idempotent" : definition.receipt;
+  const captured = Object.freeze({
+    ...definition,
+    ...normalizedReceipt !== undefined ? { receipt: normalizedReceipt } : {},
+    kind,
+    input: inputSchema,
+    output: outputSchema,
+    execute
+  });
   const reference = { kind };
   Object.defineProperty(reference, definitionKey, { value: captured });
   return Object.freeze(reference);
@@ -6101,15 +6143,17 @@ function describe2(name, definition) {
 function describeCapabilities(module) {
   const model = noteDefinition(module.note);
   if (!model)
-    throw new Error("This note requires ABI 3: export note = defineNote(...) with native collections");
+    throw new Error("This note requires ABI 4: export note = defineNote(...) with native collections");
   const contract = { schemaVersion: NOTE_ABI, actions: [], queries: [], events: [], model: {} };
   const collections = collectionSchemas(model.collections);
   if (collections.length)
     contract.model.collections = Object.fromEntries(collections.map((item) => [item.name, item.contract]));
   if (model.config) {
     const configSchema = schema(model.config.schema, "input");
-    contract.model.config = { schema: configSchema, defaults: model.config.defaults, required: Array.isArray(configSchema.required) ? configSchema.required : [] };
+    contract.model.config = { schema: configSchema, defaults: model.config.defaults };
   }
+  if (model.records?.length)
+    contract.records = freezeJson(model.records);
   if (model.resources?.length)
     contract.resources = freezeJson(model.resources);
   const update = model.update ?? { dataVersion: "1" };
@@ -6139,6 +6183,9 @@ function describeCapabilities(module) {
     else
       contract.actions.push(describe2(name, definition));
   }
+  for (const source of contract.records ?? [])
+    if (source.query && !contract.queries.some((query) => query.name === source.query))
+      throw Error(`Unknown record routing query: ${source.query}`);
   if (module.triggers !== undefined)
     contract.triggers = triggerContracts(module.triggers, module.note);
   for (const key of ["actions", "queries", "events"])
@@ -6146,16 +6193,7 @@ function describeCapabilities(module) {
   return contract;
 }
 
-// ../../worka-market-compat-plan-20261028/sdk/runtime/src/operation-error.ts
-class OperationRejectedError extends Error {
-  code = "operation-rejected";
-  constructor(message) {
-    super(message);
-    this.name = "OperationRejectedError";
-  }
-}
-
-// ../../worka-market-compat-plan-20261028/sdk/runtime/src/note.ts
+// ../../../../sdk/runtime/src/note.ts
 var modelKey = Symbol.for("worka.note-model.v3");
 function mode(raw, expected) {
   if (raw.executionKind !== expected)
@@ -6166,7 +6204,7 @@ function identity(raw) {
 }
 function data(raw) {
   if (!raw.data)
-    throw new Error("This host does not provide ABI 3 native data sessions");
+    throw new Error("This host does not provide ABI 4 native data sessions");
   return raw.data;
 }
 function writer(raw) {
@@ -6179,7 +6217,7 @@ function writer(raw) {
 function declarations(note) {
   const definition = noteDefinition(note);
   if (!definition)
-    throw new Error("Missing ABI 3 note model");
+    throw new Error("Missing ABI 4 note model");
   return definition.collections ?? {};
 }
 function collectionAccess(note, raw, writable) {
@@ -6206,11 +6244,142 @@ function collectionAccess(note, raw, writable) {
     declared(name);
     return freezeJson(await data(raw).get(name, key(id)));
   };
-  const read = { get, page: async (name, options = {}) => {
+  const page = async (name, options = {}) => {
     const request = validatePageOptions(declared(name), options);
     assertJson(request);
     return freezeJson(await data(raw).page(name, request));
-  } };
+  };
+  const list = async (name, options = {}) => {
+    if (Object.keys(options).some((key) => key !== "where" && key !== "orderBy"))
+      throw new Error("list accepts only where and orderBy");
+    const result = await page(name, options);
+    if (result.next !== undefined)
+      throw new Error("Incomplete collection read. Use ctx.db.page and follow its cursor to read the complete result.");
+    return result.items;
+  };
+  const find = async (name, options = {}) => {
+    const def = declared(name);
+    const allowedKeys = new Set(["where", "search", "sort", "select", "limit", "scanLimit"]);
+    if (Object.keys(options).some((k) => !allowedKeys.has(k)))
+      throw new Error("Unknown find option");
+    const limitRaw = typeof options.limit === "number" && Number.isFinite(options.limit) ? Math.floor(options.limit) : 200;
+    const limit = Math.max(1, Math.min(500, limitRaw));
+    const scanRaw = typeof options.scanLimit === "number" && Number.isFinite(options.scanLimit) ? Math.floor(options.scanLimit) : 600;
+    const scanLimit = Math.max(limit, Math.min(2000, scanRaw));
+    const rawWhere = options.where ?? {};
+    const pushdownWhere = {};
+    const inMemorySets = [];
+    for (const [field, val] of Object.entries(rawWhere)) {
+      if (!Object.hasOwn(def.schema.shape, field) && field !== "id")
+        throw new Error(`Unknown filter field: ${field}`);
+      if (Array.isArray(val)) {
+        inMemorySets.push([field, new Set(val)]);
+      } else if (val === null || ["string", "number", "boolean"].includes(typeof val)) {
+        pushdownWhere[field] = val;
+      } else if (val !== undefined) {
+        throw new Error("Find filters support scalar equality or scalar arrays");
+      }
+    }
+    const sortSpec = Array.isArray(options.sort) ? options.sort.map((s) => ({ field: s.field, direction: s.direction ?? "asc" })) : Object.entries(options.sort ?? {}).map(([field, direction]) => ({ field, direction }));
+    for (const s of sortSpec) {
+      if (!Object.hasOwn(def.schema.shape, s.field) || !["asc", "desc"].includes(s.direction)) {
+        throw new Error(`Invalid sort field or direction: ${s.field}`);
+      }
+    }
+    const searchObj = typeof options.search === "string" ? { query: options.search } : options.search;
+    const needle = searchObj?.query?.trim().toLocaleLowerCase() ?? "";
+    const searchFields = searchObj?.fields ? [...searchObj.fields] : undefined;
+    if (searchFields) {
+      for (const f of searchFields) {
+        if (!Object.hasOwn(def.schema.shape, f))
+          throw new Error(`Unknown search field: ${f}`);
+      }
+    }
+    const requestedSelect = Array.isArray(options.select) ? [...options.select] : undefined;
+    const neededExtra = new Set;
+    if (requestedSelect) {
+      for (const [f] of inMemorySets)
+        if (f !== "id" && !requestedSelect.includes(f))
+          neededExtra.add(f);
+      for (const s of sortSpec)
+        if (!requestedSelect.includes(s.field))
+          neededExtra.add(s.field);
+      if (needle) {
+        const candidates = searchFields ?? Object.keys(def.schema.shape);
+        for (const f of candidates)
+          if (!requestedSelect.includes(f))
+            neededExtra.add(f);
+      }
+    }
+    const pageSelect = requestedSelect ? [...requestedSelect, ...neededExtra] : undefined;
+    const pushdownOrder = sortSpec.length === 1 ? { [sortSpec[0].field]: sortSpec[0].direction } : undefined;
+    const scanned = [];
+    let cursor;
+    let revision = "0";
+    let hitScanCeiling = false;
+    do {
+      const batch = await page(name, {
+        ...Object.keys(pushdownWhere).length ? { where: pushdownWhere } : {},
+        ...pushdownOrder ? { orderBy: pushdownOrder } : {},
+        ...pageSelect ? { select: pageSelect } : {},
+        ...cursor ? { cursor } : {}
+      });
+      revision = batch.revision;
+      for (const row of batch.items) {
+        scanned.push(row);
+        if (scanned.length >= scanLimit) {
+          if (batch.next !== undefined)
+            hitScanCeiling = true;
+          break;
+        }
+      }
+      if (scanned.length >= scanLimit)
+        break;
+      cursor = batch.next;
+    } while (cursor);
+    let matched = scanned;
+    if (inMemorySets.length) {
+      matched = matched.filter((row) => inMemorySets.every(([field, allowed]) => allowed.has(row[field])));
+    }
+    if (needle) {
+      matched = matched.filter((row) => {
+        const keys = searchFields ?? Object.keys(row);
+        return keys.some((k) => typeof row[k] === "string" && row[k].toLocaleLowerCase().includes(needle));
+      });
+    }
+    if (sortSpec.length > 1) {
+      matched = [...matched].sort((a, b) => {
+        for (const { field, direction } of sortSpec) {
+          const av = a[field], bv = b[field];
+          if (av === bv)
+            continue;
+          if (av === undefined || av === null)
+            return 1;
+          if (bv === undefined || bv === null)
+            return -1;
+          const cmp = av < bv ? -1 : 1;
+          return direction === "desc" ? -cmp : cmp;
+        }
+        return 0;
+      });
+    }
+    const totalMatched = matched.length;
+    const sliced = matched.slice(0, limit).map((row) => {
+      if (!neededExtra.size || !requestedSelect)
+        return row;
+      const copy = { id: row.id };
+      for (const f of requestedSelect)
+        copy[f] = row[f];
+      return copy;
+    });
+    return freezeJson({
+      items: sliced,
+      totalMatched,
+      truncated: hitScanCeiling || totalMatched > limit,
+      revision
+    });
+  };
+  const read = { get, page, list, find };
   if (!writable)
     return Object.freeze(read);
   return Object.freeze({
@@ -6309,7 +6478,7 @@ function bindActionContext(note, raw) {
     return raw.invoke({ kind, name: target.name, input });
   };
   const action = raw;
-  const { agent, notifications, previews, extensions, quip, slack, subprocess } = action;
+  const { agent, notifications, previews, extensions, subprocess } = action;
   return Object.freeze({
     note: identity(raw),
     signal: raw.signal,
@@ -6327,7 +6496,18 @@ function bindActionContext(note, raw) {
       ...agent?.prepare ? { prepare: agent.prepare.bind(agent) } : {},
       ...agent?.stop ? { stop: agent.stop.bind(agent) } : {},
       result: (runId) => agent.result(runId, { wait: false })
-    }), notifications, previews, extensions, quip, slack, subprocess: Object.freeze({ exec: subprocess?.exec?.bind(subprocess) }) }),
+    }), notifications, previews, extensions, subprocess: Object.freeze({ exec: subprocess?.exec?.bind(subprocess) }) }),
+    decide: async (request) => {
+      assertJson(request);
+      if (!raw.decide) {
+        const answers = Object.fromEntries(request.items.map((item) => {
+          const first = typeof item.choices[0] === "string" ? item.choices[0] : item.choices[0].value;
+          return [item.id, { choice: item.fallback ?? first, confidence: 0 }];
+        }));
+        return { answers, backend: "degraded", degraded: true };
+      }
+      return raw.decide(request);
+    },
     jobs: Object.freeze({
       infer: (request, options) => {
         const onComplete = operationTarget(options.onComplete, note, ["mutation", "action"]);
@@ -6359,8 +6539,8 @@ function bindActionContext(note, raw) {
   });
 }
 function defineNote(definition) {
-  if (!definition || typeof definition !== "object" || Object.keys(definition).some((key) => !["collections", "config", "resources", "update"].includes(key)))
-    throw new Error("ABI 3 notes use native collections; state/background and unknown model fields are unsupported");
+  if (!definition || typeof definition !== "object" || Object.keys(definition).some((key) => !["collections", "config", "resources", "update", "records"].includes(key)))
+    throw new Error("ABI 4 notes use native collections; state/background and unknown model fields are unsupported");
   if (definition.update && Object.keys(definition.update).some((key) => !["dataVersion", "checks"].includes(key)))
     throw new Error("Model update accepts only dataVersion and checks");
   const collections = collectionSchemas(definition.collections);
@@ -6368,8 +6548,13 @@ function defineNote(definition) {
     throw new Error("Config schema must be an object");
   if (definition.resources && definition.resources.length > 32)
     throw new Error("A note may declare at most 32 resource needs");
+  const records = validateRecordRouting(definition.records);
+  for (const source of records)
+    if (source.collection && !definition.collections?.[source.collection])
+      throw Error(`Unknown record routing collection: ${source.collection}`);
   const captured = Object.freeze({
     ...definition,
+    ...records.length ? { records: freezeJson(records) } : {},
     collections: Object.freeze(Object.fromEntries(collections.map((item) => [item.name, item.definition]))),
     ...definition.config ? { config: Object.freeze({ schema: definition.config.schema, defaults: freezeJson(definition.config.schema.partial().parse(definition.config.defaults)) }) } : {},
     ...definition.resources ? { resources: freezeJson(definition.resources) } : {}
@@ -6400,7 +6585,7 @@ function noteDefinition(value) {
 async function validateNoteModel(note, raw) {
   const definition = noteDefinition(note);
   if (!definition)
-    throw new Error("Missing ABI 3 note model");
+    throw new Error("Missing ABI 4 note model");
   if (definition.config)
     assertJson(definition.config.schema.partial().parse(await data(raw).getConfig()));
 }
@@ -6410,11 +6595,12 @@ async function checkNoteModel(note, name, raw) {
     throw new Error(`Unknown model check: ${name}`);
   return await check.run(bindQueryContext(note, raw)) === true;
 }
-// ../../worka-market-compat-plan-20261028/sdk/runtime/src/preview-project.mjs
+// ../../../../sdk/runtime/src/preview-project.mjs
 var compiled = Symbol.for("worka.preview.project");
-// ../../worka-market-compat-plan-20261028/sdk/runtime/src/note-file-reference.ts
-var NOTE_FILE_MAX_BYTES = 4 * 1024 * 1024;
-// ../../worka-market-compat-plan-20261028/sdk/runtime/src/sha256.ts
+// ../../../../sdk/runtime/src/note-file-reference.ts
+var NOTE_FILE_MAX_BYTES = 20 * 1024 * 1024;
+var NOTE_FILE_MAX_WIRE_BYTES = Math.ceil(NOTE_FILE_MAX_BYTES / 3) * 4 + 1024 * 1024;
+// ../../../../sdk/runtime/src/sha256.ts
 var K = new Uint32Array([
   1116352408,
   1899447441,
@@ -6501,10 +6687,10 @@ var reset = note.mutation({ output }, async (ctx) => {
   await ctx.db.put("counters", "root", { count: 0 });
   return { count: 0 };
 });
-// ../../worka-market-compat-plan-20261028/sdk/runtime/src/saved-media.ts
+// ../../../../sdk/runtime/src/saved-media.ts
 var SAVED_IMAGE_LIMITS = Object.freeze({ bytes: 512 * 1024, totalBytes: 2 * 1024 * 1024, count: 8, dimension: 1600 });
 var SAVED_FILE_LIMITS = Object.freeze({ bytes: 4 * 1024 * 1024, totalBytes: 8 * 1024 * 1024, count: 8 });
-// ../../worka-market-compat-plan-20261028/sdk/runtime/src/note-read-projection.ts
+// ../../../../sdk/runtime/src/note-read-projection.ts
 var NOTE_READ_TAGS = ["div", "section", "article", "p", "h1", "h2", "h3", "h4", "h5", "h6", "ul", "ol", "li", "dl", "dt", "dd", "blockquote", "pre", "code", "strong", "em", "s", "small", "span", "br", "hr", "table", "thead", "tbody", "tfoot", "tr", "th", "td", "figure", "figcaption"];
 var NOTE_READ_LIMITS = { nodes: 4096, depth: 32, text: 128 * 1024, bytes: 3 * 1024 * 1024 };
 var tags = new Set(NOTE_READ_TAGS);
