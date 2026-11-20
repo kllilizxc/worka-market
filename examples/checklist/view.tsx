@@ -1,10 +1,9 @@
 import { defineMessages } from '@dsh-workbench/runtime/view';
 import { useState } from 'react';
-import { Button } from '@heroui/react/button';
-import { Checkbox } from '@heroui/react/checkbox';
-import { TextField } from '@heroui/react/textfield';
-import { Label } from '@heroui/react/label';
-import { Input } from '@heroui/react/input';
+import { Button } from '@/components/ui/button';
+import { Checkbox } from '@/components/ui/checkbox';
+import { Label } from '@/components/ui/label';
+import { Input } from '@/components/ui/input';
 import { EmptyState, List, ListRow, NoteSurface, NoteHeader, Toolbar, useMessages, QueryState, defineNoteView, useMutation, useNote } from '@dsh-workbench/react';
 
 const messages = defineMessages('zh-CN', {"nextItem": "下一件小事", "add": "添加", "previous": "上一页", "next": "下一页", "verify": "核对保存结果", "empty": "还没有事项", "emptyDescription": "先写下一件。"}, { en: {"nextItem": "Next small task", "add": "Add", "previous": "Previous", "next": "Next", "verify": "Check saved result", "empty": "No tasks yet", "emptyDescription": "Write down one thing to do."} });
@@ -29,22 +28,23 @@ function Checklist() {
     else if (unknown) await unknown.retry();
   }
   return <NoteSurface header={<><NoteHeader /><Toolbar>
-    <TextField value={text} onChange={setText} isDisabled={busy} style={{ flex: 1, minWidth: 0 }}>
-      <Label>{copy.nextItem}</Label><Input onKeyDown={event => { if (event.key === 'Enter') void submit(); }} />
-    </TextField>
-    <Button isDisabled={busy || !text.trim()} onPress={() => void submit()}>{copy.add}</Button>
+    <div style={{ display: 'grid', gap: 4, flex: 1, minWidth: 0 }}>
+      <Label htmlFor="checklist-next">{copy.nextItem}</Label>
+      <Input id="checklist-next" value={text} disabled={busy} onChange={event => setText(event.currentTarget.value)} onKeyDown={event => { if (event.key === 'Enter') void submit(); }} />
+    </div>
+    <Button disabled={busy || !text.trim()} onClick={() => void submit()}>{copy.add}</Button>
   </Toolbar></>} footer={<>
     {mode === 'expanded' && <Toolbar>
-      <Button variant="secondary" isDisabled={!page.hasPrevious || page.loading || busy} onPress={page.previous}>{copy.previous}</Button>
-      <Button variant="secondary" isDisabled={!page.hasNext || page.loading || busy} onPress={page.next}>{copy.next}</Button>
+      <Button variant="secondary" disabled={!page.hasPrevious || page.loading || busy} onClick={page.previous}>{copy.previous}</Button>
+      <Button variant="secondary" disabled={!page.hasNext || page.loading || busy} onClick={page.next}>{copy.next}</Button>
     </Toolbar>}
     {error && <p role="alert">{error.message}</p>}
-    {unknown && <Button variant="secondary" onPress={() => void retryUnknown()}>{copy.verify}</Button>}
+    {unknown && <Button variant="secondary" onClick={() => void retryUnknown()}>{copy.verify}</Button>}
   </>}>
     <QueryState query={page}>{data => data.items.length
       ? <List>{(mode === 'compact' ? data.items.slice(0, 3) : data.items).map(item =>
-        <ListRow key={item.id} title={<Checkbox isSelected={item.done} isDisabled={busy}
-          onChange={done => void setDone.mutate({ id: item.id, done })}><Checkbox.Control><Checkbox.Indicator /></Checkbox.Control><Checkbox.Content>{item.text}</Checkbox.Content></Checkbox>} />)}</List>
+        <ListRow key={item.id} title={<label style={{ display: 'flex', alignItems: 'center', gap: 8 }}><Checkbox checked={item.done} disabled={busy}
+          onCheckedChange={done => void setDone.mutate({ id: item.id, done: done === true })} />{item.text}</label>} />)}</List>
       : <EmptyState title={copy.empty} description={copy.emptyDescription} />}</QueryState>
   </NoteSurface>;
 }

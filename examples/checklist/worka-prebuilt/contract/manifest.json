@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "codeVersion": "1.0.1",
+  "codeVersion": "2add45bf7656-b4e13b54",
   "status": "ready",
   "files": [
     "SKILL.md",
@@ -14,5 +14,8 @@
     "name": "worka-example-checklist",
     "description": "记录小事并更新完成状态。"
   },
-  "typeErrors": []
+  "typeErrors": [
+    "view.tsx:7:62: error TS2305: Module '\"@dsh-workbench/react\"' has no exported member 'Toolbar'.",
+    "view.tsx:7:71: error TS2305: Module '\"@dsh-workbench/react\"' has no exported member 'useMessages'."
+  ]
 }
