@@ -66,7 +66,7 @@ export async function validateRemote(entries) {
         await git(['fetch','--quiet','--depth=1','--filter=blob:none','--',row.repository,tag ?? 'HEAD'],dir);
         repos.set(row.repository,dir);
       }
-      const files = row.kind === 'note' ? ['worka-note.json','worka-prebuilt/manifest.json'] : ['desktop.json'];
+      const files = row.kind === 'note' ? ['worka-note.json','worka-prebuilt/manifest.json'] : row.kind === 'mascot' ? ['manifest.json','pack.js'] : ['desktop.json'];
       for (const file of files) {
         const path = row.path === '.' ? file : row.path+'/'+file;
         if (await git(['cat-file','-t','FETCH_HEAD:'+path],dir) !== 'blob') throw new Error('Missing package file: '+row.id+'/'+path);
