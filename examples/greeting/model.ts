@@ -1,6 +1,10 @@
 import { defineNote, z } from '@dsh-workbench/runtime';
 
+export const greetingStateSchema = z.object({ name: z.string().trim().max(100) });
 export const note = defineNote({
-  config: { schema: z.object({ name: z.string().trim().min(1).max(100) }), defaults: {} },
-  update: { dataVersion: 'example-greeting@1' },
+  state: {
+    schema: greetingStateSchema,
+    initial: { name: '' },
+  },
+  update: { dataVersion: 'example-greeting@2' },
 });

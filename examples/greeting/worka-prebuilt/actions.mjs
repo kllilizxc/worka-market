@@ -16,12 +16,14 @@ var __export = (target, all) => {
 // actions.ts
 var exports_actions = {};
 __export(exports_actions, {
-  note: () => note
+  greeting: () => greeting,
+  note: () => note,
+  setName: () => setName
 });
 
-// ../../../../sdk/runtime/src/bridge.ts
+// ../../../sdk/runtime/src/bridge.ts
 var DEFAULT_REQUEST_TIMEOUT_MS = 5 * 60000;
-// ../../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/util.js
+// ../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/util.js
 function getEnumValues(entries) {
   const numericValues = Object.values(entries).filter((v) => typeof v === "number");
   const values = Object.entries(entries).filter(([k, _]) => numericValues.indexOf(+k) === -1).map(([_, v]) => v);
@@ -559,7 +561,7 @@ function constantCatch(value) {
   return fn;
 }
 
-// ../../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/core.js
+// ../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/core.js
 var _a;
 var _zodDesc = { value: undefined, enumerable: false };
 var _E = "captureStackTrace" in Error ? Error : null;
@@ -678,7 +680,7 @@ function config(newConfig) {
     Object.assign(globalConfig, newConfig);
   return globalConfig;
 }
-// ../../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/errors.js
+// ../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/errors.js
 function _getMessage() {
   const internals = this._zod;
   internals.message ?? (internals.message = JSON.stringify(internals.def, jsonStringifyReplacer, 2));
@@ -793,7 +795,7 @@ function formatError(error, mapper = (issue) => issue.message) {
   return fieldErrors;
 }
 
-// ../../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/parse.js
+// ../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/parse.js
 function finalizeParams(callee, params) {
   return { callee: params?.callee ?? callee, Err: params?.Err };
 }
@@ -940,7 +942,7 @@ var _safeEncodeAsync = (_Err) => async (schema, value, _ctx) => {
 var _safeDecodeAsync = (_Err) => async (schema, value, _ctx) => {
   return _safeParseAsync(_Err)(schema, value, _ctx);
 };
-// ../../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/regexes.js
+// ../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/regexes.js
 var cuid = /^[cC][0-9a-z]{6,}$/;
 var cuid2 = /^[0-9a-z]+$/;
 var ulid = /^[0-7][0-9A-HJKMNP-TV-Za-hjkmnp-tv-z]{25}$/;
@@ -998,7 +1000,7 @@ var _null = /^null$/i;
 var lowercase = /^[^A-Z]*$/;
 var uppercase = /^[^a-z]*$/;
 
-// ../../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/checks.js
+// ../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/checks.js
 var $ZodCheck = /* @__PURE__ */ $constructor("$ZodCheck", (inst, def) => {
   var _a;
   inst._zod ?? (inst._zod = {});
@@ -1184,7 +1186,7 @@ var $ZodCheckOverwrite = /* @__PURE__ */ $constructor("$ZodCheckOverwrite", (ins
   };
 });
 
-// ../../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/doc.js
+// ../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/doc.js
 class Doc {
   constructor(args = [], closed = {}) {
     this.content = [];
@@ -1226,14 +1228,14 @@ ${content.join(`
   }
 }
 
-// ../../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/versions.js
+// ../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/versions.js
 var version = {
   major: 4,
   minor: 6,
   patch: 1
 };
 
-// ../../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/schemas.js
+// ../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/schemas.js
 var $ZodType = /* @__PURE__ */ $constructor("$ZodType", (inst, def) => {
   var _a;
   inst ?? (inst = {});
@@ -2590,7 +2592,7 @@ var $ZodProperties = /* @__PURE__ */ $constructor("$ZodProperties", (inst, def) 
     yield this;
   }
 });
-// ../../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/memoizer.js
+// ../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/memoizer.js
 class $ZodCyclicError extends Error {
   constructor() {
     super(`Cannot parse a reference cycle that closes through a transform`);
@@ -2862,7 +2864,7 @@ function isBackEdge(ctx, value) {
   const backEdges = ctx[STATE]?.backEdges;
   return backEdges !== undefined && isRef(value) && backEdges.has(value);
 }
-// ../../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/locales/en.js
+// ../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/locales/en.js
 var error = () => {
   const Sizable = {
     string: { unit: "characters", verb: "to have" },
@@ -2983,7 +2985,7 @@ function en_default() {
     localeError: error()
   };
 }
-// ../../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/registries.js
+// ../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/registries.js
 var _a2;
 class $ZodRegistry {
   constructor() {
@@ -3030,7 +3032,7 @@ function registry() {
 }
 (_a2 = globalThis).__zod_globalRegistry ?? (_a2.__zod_globalRegistry = registry());
 var globalRegistry = globalThis.__zod_globalRegistry;
-// ../../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/api.js
+// ../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/api.js
 function _string(Class, params) {
   return new Class({
     type: "string",
@@ -3425,7 +3427,7 @@ function _check(fn, params) {
   ch._zod.check = fn;
   return ch;
 }
-// ../../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/to-json-schema.js
+// ../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/to-json-schema.js
 function assignProps(target, ...sources) {
   for (const source of sources) {
     for (const key of Reflect.ownKeys(source)) {
@@ -3948,7 +3950,7 @@ var createStandardJSONSchemaMethod = (schema, io, processors = {}) => (params) =
   extractDefs(ctx, schema);
   return finalize(ctx, schema);
 };
-// ../../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/json-schema-processors.js
+// ../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/core/json-schema-processors.js
 var narrowMin = (agg, key, value) => {
   if (agg[key] === undefined || value > agg[key])
     agg[key] = value;
@@ -4719,7 +4721,7 @@ function toJSONSchema(input, params) {
   extractDefs(ctx, input);
   return finalize(ctx, input);
 }
-// ../../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/classic/errors.js
+// ../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/classic/errors.js
 var _installedErrorProtos = /* @__PURE__ */ new WeakSet([Object.prototype, Error.prototype]);
 function _lazyMethod(proto, key, make) {
   Object.defineProperty(proto, key, {
@@ -4764,7 +4766,7 @@ var ZodRealError = /* @__PURE__ */ $constructor("ZodError", initializer2, undefi
   Parent: Error
 });
 
-// ../../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/classic/parse.js
+// ../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/classic/parse.js
 var parse2 = /* @__PURE__ */ _parse(ZodRealError);
 var parseAsync = /* @__PURE__ */ _parseAsync(ZodRealError);
 var safeParse = /* @__PURE__ */ _safeParse(ZodRealError);
@@ -4778,7 +4780,7 @@ var safeDecode = /* @__PURE__ */ _safeDecode(ZodRealError);
 var safeEncodeAsync = /* @__PURE__ */ _safeEncodeAsync(ZodRealError);
 var safeDecodeAsync = /* @__PURE__ */ _safeDecodeAsync(ZodRealError);
 
-// ../../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/classic/schemas.js
+// ../../../node_modules/.bun/zod@4.6.1/node_modules/zod/v4/classic/schemas.js
 function _ensureDefaultLocale() {
   if (!globalConfig.localeError)
     config(en_default());
@@ -5311,6 +5313,14 @@ function strictObject(shape, params) {
     ...normalizeParams(params)
   });
 }
+function looseObject(shape, params) {
+  return new ZodObject({
+    type: "object",
+    shape,
+    catchall: unknown(),
+    ...normalizeParams(params)
+  });
+}
 var ZodUnion = /* @__PURE__ */ $constructor("ZodUnion", (inst, def) => {
   $ZodUnion.init(inst, def);
   ZodType.init(inst, def);
@@ -5553,7 +5563,7 @@ function refine(fn, _params = {}) {
 function superRefine(fn, params) {
   return _superRefine(fn, params);
 }
-// ../../../../sdk/runtime/src/record-routing.ts
+// ../../../sdk/runtime/src/record-routing.ts
 function validateRecordRouting(value) {
   if (value === undefined)
     return [];
@@ -5564,7 +5574,7 @@ function validateRecordRouting(value) {
     if (!raw || typeof raw !== "object")
       throw Error("Invalid record routing declaration");
     const d = raw;
-    if (Object.keys(d).some((key) => !["collection", "query", "input", "items", "next", "route", "id", "label", "aliases", "session", "links", "identities"].includes(key)) || !!d.collection === !!d.query || [d.collection, d.query].some((v) => v !== undefined && !/^[A-Za-z][A-Za-z\d_-]*$/.test(v)) || d.route !== undefined && (!d.route || typeof d.route.path !== "string" || !d.route.path.startsWith("/") || typeof d.route.param !== "string" || !d.route.path.split("/").includes(":" + d.route.param)) || !pointer(d.id) || [d.label, d.session, d.items, d.next].some((v) => v !== undefined && !pointer(v)) || d.query && !d.items || d.aliases !== undefined && (!Array.isArray(d.aliases) || d.aliases.length > 16 || d.aliases.some((value) => typeof value === "string" ? !pointer(value) : !value || !pointer(value.items) || !pointer(value.id))) || d.links !== undefined && (!Array.isArray(d.links) || d.links.length > 32 || d.links.some((link) => !link || !(link.noteId === "$self" || pointer(link.noteId)) || !pointer(link.recordId))) || d.identities !== undefined && (!Array.isArray(d.identities) || d.identities.length > 16 || d.identities.some((key) => !key || typeof key.namespace !== "string" || !key.namespace.trim() || !pointer(key.value))))
+    if (Object.keys(d).some((key) => !["collection", "query", "input", "items", "next", "route", "id", "label", "aliases", "session", "followUp", "links", "identities"].includes(key)) || !!d.collection === !!d.query || [d.collection, d.query].some((v) => v !== undefined && !/^[A-Za-z][A-Za-z\d_-]*$/.test(v)) || d.route !== undefined && (!d.route || typeof d.route.path !== "string" || !d.route.path.startsWith("/") || typeof d.route.param !== "string" || !d.route.path.split("/").includes(":" + d.route.param)) || !pointer(d.id) || [d.label, d.session, d.followUp, d.items, d.next].some((v) => v !== undefined && !pointer(v)) || d.query && !d.items || d.aliases !== undefined && (!Array.isArray(d.aliases) || d.aliases.length > 16 || d.aliases.some((value) => typeof value === "string" ? !pointer(value) : !value || !pointer(value.items) || !pointer(value.id))) || d.links !== undefined && (!Array.isArray(d.links) || d.links.length > 32 || d.links.some((link) => !link || !(link.noteId === "$self" || pointer(link.noteId)) || !pointer(link.recordId))) || d.identities !== undefined && (!Array.isArray(d.identities) || d.identities.length > 16 || d.identities.some((key) => !key || typeof key.namespace !== "string" || !key.namespace.trim() || !pointer(key.value))))
       throw Error("Invalid record routing declaration");
     if (d.input !== undefined && (!d.input || typeof d.input !== "object" || Array.isArray(d.input)))
       throw Error("Invalid record routing query input");
@@ -5572,59 +5582,7 @@ function validateRecordRouting(value) {
   });
 }
 
-// ../../../../sdk/runtime/src/collections.ts
-var pageInput = /* @__PURE__ */ (() => strictObject({ cursor: string2().min(1).max(32768).optional() }))();
-var identifier = /^[A-Za-z][A-Za-z\d_-]*$/;
-var idSchema = /* @__PURE__ */ (() => string2().min(1).max(512))();
-function pageSchema(record) {
-  return strictObject({ items: array(record), revision: string2().min(1), next: string2().min(1).optional() });
-}
-function collectionSchemas(declarations = {}) {
-  if (Object.keys(declarations).length > 32)
-    throw new Error("A note may declare at most 32 collections");
-  return Object.entries(declarations).map(([name, definition]) => {
-    if (!identifier.test(name) || !definition || typeof definition !== "object" || Array.isArray(definition) || Object.keys(definition).some((key) => !["schema", "indexes"].includes(key)) || !(definition.schema instanceof ZodObject))
-      throw new Error(`Invalid native collection declaration: ${name}`);
-    if (Object.hasOwn(definition.schema.shape, "id"))
-      throw new Error(`Collection ${name}: id is a system field`);
-    const indexes = definition.indexes?.map((fields) => [...fields]);
-    if (indexes && (indexes.length > 16 || indexes.some((fields) => !fields.length || fields.length > 8 || new Set(fields).size !== fields.length || fields.some((field) => !Object.hasOwn(definition.schema.shape, field)))))
-      throw new Error(`Invalid indexes for collection ${name}`);
-    const recordSchema = definition.schema.safeExtend({ id: idSchema });
-    const model = Object.freeze({ recordSchema, pageSchema: (fields) => {
-      if (fields === undefined)
-        return pageSchema(recordSchema);
-      if (!Array.isArray(fields) || new Set(fields).size !== fields.length || fields.some((field) => !Object.hasOwn(definition.schema.shape, field)))
-        throw new Error(`Invalid projection fields for collection ${name}`);
-      return pageSchema(strictObject({ ...Object.fromEntries(fields.map((field) => [field, definition.schema.shape[field]])), id: idSchema }));
-    } });
-    const contract = {
-      schema: toJSONSchema(definition.schema, { io: "output", unrepresentable: "throw" }),
-      ...indexes?.length ? { indexes } : {}
-    };
-    return { name, definition: Object.freeze({ schema: definition.schema, ...indexes ? { indexes: Object.freeze(indexes.map((fields) => Object.freeze(fields))) } : {} }), model, contract };
-  });
-}
-function validatePageOptions(declaration, options = {}) {
-  const fields = declaration.schema.shape;
-  if (Object.keys(options).some((key) => !["where", "orderBy", "select", "cursor"].includes(key)))
-    throw new Error("Unknown page option");
-  pageInput.parse({ cursor: options.cursor });
-  for (const [field, value] of Object.entries(options.where ?? {})) {
-    if (!Object.hasOwn(fields, field) && field !== "id")
-      throw new Error(`Unknown filter field: ${field}`);
-    if (value !== null && !["string", "number", "boolean"].includes(typeof value) || typeof value === "number" && !Number.isFinite(value))
-      throw new Error("Page filters support finite scalar equality only");
-  }
-  const ordering = Object.entries(options.orderBy ?? {});
-  if (ordering.length > 1 || ordering.some(([field, direction]) => !Object.hasOwn(fields, field) || !["asc", "desc"].includes(direction)))
-    throw new Error("orderBy accepts one declared business field");
-  if (options.select && (!Array.isArray(options.select) || new Set(options.select).size !== options.select.length || options.select.some((field) => !Object.hasOwn(fields, field))))
-    throw new Error("select accepts declared top-level business fields");
-  return options;
-}
-
-// ../../../../sdk/runtime/src/json-value.ts
+// ../../../sdk/runtime/src/json-value.ts
 function assertJson(value) {
   const seen = new Set;
   const invalid = () => {
@@ -5686,7 +5644,82 @@ function freezeJson(value) {
   return copy;
 }
 
-// ../../../../sdk/runtime/src/triggers.ts
+// ../../../sdk/runtime/src/collections.ts
+var pageInput = /* @__PURE__ */ (() => strictObject({ cursor: string2().min(1).max(32768).optional() }))();
+var identifier = /^[A-Za-z][A-Za-z\d_-]*$/;
+var idSchema = /* @__PURE__ */ (() => string2().min(1).max(512))();
+function pageSchema(record) {
+  return strictObject({ items: array(record), revision: string2().min(1), next: string2().min(1).optional() });
+}
+function collectionSchemas(declarations = {}) {
+  if (Object.keys(declarations).length > 32)
+    throw new Error("A note may declare at most 32 collections");
+  return Object.entries(declarations).map(([name, definition]) => {
+    if (!identifier.test(name) || !definition || typeof definition !== "object" || Array.isArray(definition) || Object.keys(definition).some((key) => !["schema", "indexes", "scope", "defaults"].includes(key)) || !(definition.schema instanceof ZodObject))
+      throw new Error(`Invalid native collection declaration: ${name}`);
+    if (Object.hasOwn(definition.schema.shape, "id"))
+      throw new Error(`Collection ${name}: id is a system field`);
+    if (definition.scope !== undefined && definition.scope !== "content" && definition.scope !== "cache")
+      throw new Error(`Invalid scope for collection ${name}`);
+    let parsedDefaults;
+    if (definition.defaults !== undefined) {
+      if (!definition.defaults || typeof definition.defaults !== "object" || Array.isArray(definition.defaults))
+        throw new Error(`Invalid defaults for collection ${name}`);
+      const defaultEntries = Object.entries(definition.defaults);
+      if (defaultEntries.length > 64)
+        throw new Error(`Collection ${name} supports at most 64 default documents`);
+      parsedDefaults = {};
+      for (const [docId, rawValue] of defaultEntries) {
+        if (["__proto__", "prototype", "constructor"].includes(docId))
+          throw new Error(`Invalid default document id: ${docId}`);
+        idSchema.parse(docId);
+        assertJson(rawValue);
+        const parsed = definition.schema.parse(rawValue);
+        assertJson(parsed);
+        parsedDefaults[docId] = freezeJson(parsed);
+      }
+      parsedDefaults = freezeJson(parsedDefaults);
+    }
+    const indexes = definition.indexes?.map((fields) => [...fields]);
+    if (indexes && (indexes.length > 16 || indexes.some((fields) => !fields.length || fields.length > 8 || new Set(fields).size !== fields.length || fields.some((field) => !Object.hasOwn(definition.schema.shape, field)))))
+      throw new Error(`Invalid indexes for collection ${name}`);
+    const recordSchema = definition.schema.safeExtend({ id: idSchema });
+    const model = Object.freeze({ recordSchema, pageSchema: (fields) => {
+      if (fields === undefined)
+        return pageSchema(recordSchema);
+      if (!Array.isArray(fields) || new Set(fields).size !== fields.length || fields.some((field) => !Object.hasOwn(definition.schema.shape, field)))
+        throw new Error(`Invalid projection fields for collection ${name}`);
+      return pageSchema(strictObject({ ...Object.fromEntries(fields.map((field) => [field, definition.schema.shape[field]])), id: idSchema }));
+    } });
+    const contract = {
+      schema: toJSONSchema(definition.schema, { io: "output", unrepresentable: "throw" }),
+      ...indexes?.length ? { indexes } : {},
+      ...definition.scope ? { scope: definition.scope } : {},
+      ...parsedDefaults && Object.keys(parsedDefaults).length ? { defaults: parsedDefaults } : {}
+    };
+    return { name, definition: Object.freeze({ schema: definition.schema, ...indexes ? { indexes: Object.freeze(indexes.map((fields) => Object.freeze(fields))) } : {}, ...definition.scope ? { scope: definition.scope } : {}, ...parsedDefaults ? { defaults: parsedDefaults } : {} }), model, contract };
+  });
+}
+function validatePageOptions(declaration, options = {}) {
+  const fields = declaration.schema.shape;
+  if (Object.keys(options).some((key) => !["where", "orderBy", "select", "cursor"].includes(key)))
+    throw new Error("Unknown page option");
+  pageInput.parse({ cursor: options.cursor });
+  for (const [field, value] of Object.entries(options.where ?? {})) {
+    if (!Object.hasOwn(fields, field) && field !== "id")
+      throw new Error(`Unknown filter field: ${field}`);
+    if (value !== null && !["string", "number", "boolean"].includes(typeof value) || typeof value === "number" && !Number.isFinite(value))
+      throw new Error("Page filters support finite scalar equality only");
+  }
+  const ordering = Object.entries(options.orderBy ?? {});
+  if (ordering.length > 1 || ordering.some(([field, direction]) => !Object.hasOwn(fields, field) || !["asc", "desc"].includes(direction)))
+    throw new Error("orderBy accepts one declared business field");
+  if (options.select && (!Array.isArray(options.select) || new Set(options.select).size !== options.select.length || options.select.some((field) => !Object.hasOwn(fields, field))))
+    throw new Error("select accepts declared top-level business fields");
+  return options;
+}
+
+// ../../../sdk/runtime/src/triggers.ts
 var triggerKey = Symbol.for("worka.note-triggers.v3");
 function defineTriggers(note, declarations) {
   if (!Array.isArray(declarations) || declarations.length > 32)
@@ -5740,10 +5773,10 @@ function triggerContracts(value, note) {
   });
 }
 
-// ../../../../sdk/runtime/src/contracts.ts
+// ../../../sdk/runtime/src/contracts.ts
 var NOTE_ABI = 4;
 
-// ../../../../sdk/runtime/src/operation-error.ts
+// ../../../sdk/runtime/src/operation-error.ts
 class OperationRejectedError extends Error {
   code = "operation-rejected";
   constructor(message) {
@@ -5752,7 +5785,7 @@ class OperationRejectedError extends Error {
   }
 }
 
-// ../../../../sdk/runtime/src/capabilities.ts
+// ../../../sdk/runtime/src/capabilities.ts
 var definitionKey = Symbol.for("worka.note-capability.v3");
 var namesKey = Symbol.for("worka.note-operation-names.v3");
 var registry2 = globalThis;
@@ -5837,6 +5870,7 @@ function describe2(name, definition) {
     ...definition.input ? { inputSchema: schema(definition.input, "input") } : {},
     outputSchema: schema(definition.output, "output"),
     ...definition.kind === "event" ? {} : { executionKind: definition.kind },
+    ...definition.kind === "event" && definition.settleMs !== undefined ? { settleMs: definition.settleMs } : {},
     ...definition.visibility === "private" ? { visibility: "private" } : {},
     ...Object.fromEntries(["objectRef", "objectLabel", "revision", "receipt"].filter((key) => definition[key] !== undefined).map((key) => [key, definition[key]]))
   };
@@ -5852,6 +5886,9 @@ function describeCapabilities(module) {
   if (model.config) {
     const configSchema = schema(model.config.schema, "input");
     contract.model.config = { schema: configSchema, defaults: model.config.defaults };
+  }
+  if (model.bindingContracts) {
+    contract.model.bindings = freezeJson(model.bindingContracts);
   }
   if (model.records?.length)
     contract.records = freezeJson(model.records);
@@ -5894,7 +5931,230 @@ function describeCapabilities(module) {
   return contract;
 }
 
-// ../../../../sdk/runtime/src/note.ts
+// ../../../sdk/runtime/src/bindings.ts
+var bindingSymbol = Symbol.for("worka.note-binding.v1");
+var bindingIdentifier = /^[A-Za-z][A-Za-z\d_-]*$/;
+var serviceNamePattern = /^[a-z][a-z0-9-]*$/;
+var statusResourcePattern = /^extension\.([a-z][a-z0-9-]*)(?:\.[a-zA-Z][a-zA-Z0-9_-]*)*\.status$/;
+function cleanDescription(value) {
+  const trimmed = value?.trim();
+  return trimmed ? trimmed.slice(0, 300) : undefined;
+}
+function makeDeclaration(contract) {
+  return Object.freeze({
+    [bindingSymbol]: true,
+    kind: contract.kind,
+    contract: freezeJson(contract)
+  });
+}
+var binding = Object.freeze({
+  path(options = {}) {
+    const targetKind = options.kind ?? "dir";
+    if (targetKind !== "file" && targetKind !== "dir") {
+      throw new Error(`Invalid path binding kind: ${String(targetKind)}`);
+    }
+    const landmarks = options.landmarks?.map((item) => item.trim()).filter(Boolean);
+    if (landmarks && landmarks.length > 16) {
+      throw new Error("A path binding may declare at most 16 landmarks");
+    }
+    const description = cleanDescription(options.description);
+    return makeDeclaration({
+      kind: "path",
+      targetKind,
+      ...landmarks?.length ? { landmarks } : {},
+      ...options.optional === true ? { optional: true } : {},
+      ...options.multiple === true ? { multiple: true } : {},
+      ...description ? { description } : {}
+    });
+  },
+  note(options = {}) {
+    const iface = options.interface?.trim();
+    const description = cleanDescription(options.description);
+    return makeDeclaration({
+      kind: "note",
+      ...iface ? { interface: iface } : {},
+      ...options.optional === true ? { optional: true } : {},
+      ...options.multiple === true ? { multiple: true } : {},
+      ...description ? { description } : {}
+    });
+  },
+  secret(credentialRef, options = {}) {
+    const ref = credentialRef?.trim();
+    if (!ref || ref.length > 200 || /\0/.test(ref)) {
+      throw new Error(`Invalid secret binding credentialRef: ${String(credentialRef)}`);
+    }
+    const description = cleanDescription(options.description);
+    return makeDeclaration({
+      kind: "secret",
+      credentialRef: ref,
+      ...options.optional === true ? { optional: true } : {},
+      ...description ? { description } : {}
+    });
+  },
+  service(service, options = {}) {
+    const name = service?.trim();
+    if (!name || !serviceNamePattern.test(name)) {
+      throw new Error(`Invalid service binding name: ${String(service)}`);
+    }
+    const statusResource = options.statusResource?.trim();
+    if (statusResource !== undefined && !statusResourcePattern.test(statusResource)) {
+      throw new Error(`Service statusResource must match extension.<provider>[.<service>].status: ${statusResource}`);
+    }
+    const connection = options.connection?.trim();
+    if (connection !== undefined && (!connection || connection.length > 200)) {
+      throw new Error(`Invalid service binding connection name: ${String(options.connection)}`);
+    }
+    const description = cleanDescription(options.description);
+    return makeDeclaration({
+      kind: "service",
+      service: name,
+      ...statusResource ? { statusResource } : {},
+      ...connection ? { connection } : {},
+      ...options.optional === true ? { optional: true } : {},
+      ...description ? { description } : {}
+    });
+  }
+});
+function isBindingDeclaration(value) {
+  return Boolean(value && typeof value === "object" && value[bindingSymbol] === true);
+}
+function normalizeBindingsDeclarations(declarations) {
+  if (declarations === undefined)
+    return;
+  if (!declarations || typeof declarations !== "object" || Array.isArray(declarations)) {
+    throw new Error("Invalid bindings declaration");
+  }
+  const entries = Object.entries(declarations);
+  if (entries.length > 32)
+    throw new Error("A note may declare at most 32 bindings");
+  const contracts = {};
+  for (const [name, decl] of entries) {
+    if (!bindingIdentifier.test(name) || name === "connections") {
+      throw new Error(`Invalid binding name: ${name}`);
+    }
+    if (!isBindingDeclaration(decl)) {
+      throw new Error(`Binding ${name} must be created with binding.path / binding.note / binding.secret / binding.service`);
+    }
+    assertJson(decl.contract);
+    contracts[name] = decl.contract;
+  }
+  return Object.keys(contracts).length ? freezeJson(contracts) : undefined;
+}
+function extractBindingValue(contract, rawConfig, key) {
+  if (contract.kind === "service")
+    return contract.service;
+  if (contract.kind === "secret")
+    return contract.credentialRef;
+  const raw = rawConfig[key];
+  if (contract.multiple) {
+    if (!Array.isArray(raw))
+      return;
+    const cleaned = raw.filter((item) => typeof item === "string" && item.trim().length > 0).map((item) => item.trim());
+    return cleaned.length ? freezeJson(cleaned) : undefined;
+  }
+  if (typeof raw === "string" && raw.trim().length > 0)
+    return raw.trim();
+  return;
+}
+function missingBindingNames(contracts, rawConfig, onlyKeys) {
+  if (!contracts)
+    return [];
+  const cfg = rawConfig ?? {};
+  const keys = onlyKeys ?? Object.keys(contracts);
+  const missing = [];
+  for (const key of keys) {
+    const contract = contracts[key];
+    if (!contract)
+      continue;
+    if (onlyKeys === undefined && contract.optional)
+      continue;
+    if (contract.kind === "path" || contract.kind === "note") {
+      if (extractBindingValue(contract, cfg, key) === undefined)
+        missing.push(key);
+    }
+  }
+  return missing;
+}
+function createBindingsAccess(contracts, readConfig, patchConfig) {
+  const map = contracts ?? {};
+  const getContract = (name) => {
+    if (!Object.hasOwn(map, name))
+      throw new Error(`Unknown binding: ${name}`);
+    return map[name];
+  };
+  const get = async (name) => {
+    const contract = getContract(name);
+    if (contract.kind === "service" || contract.kind === "secret") {
+      return extractBindingValue(contract, {}, name);
+    }
+    const cfg = await readConfig();
+    return extractBindingValue(contract, cfg, name);
+  };
+  const requireBinding = async (name) => {
+    const contract = getContract(name);
+    const val = await get(name);
+    if (val === undefined) {
+      const detail = contract.description ? `（${contract.description}）` : "";
+      throw new OperationRejectedError(`Missing required note binding "${name}"${detail}`);
+    }
+    return val;
+  };
+  const readAll = async () => {
+    const cfg = await readConfig();
+    const out = {};
+    for (const [name, contract] of Object.entries(map)) {
+      const val = extractBindingValue(contract, cfg, name);
+      if (val !== undefined)
+        out[name] = val;
+    }
+    return freezeJson(out);
+  };
+  if (!patchConfig) {
+    return Object.freeze({ get, require: requireBinding, readAll });
+  }
+  const normalizeWrite = (name, value) => {
+    const contract = getContract(name);
+    if (contract.kind !== "path" && contract.kind !== "note") {
+      throw new Error(`Binding "${name}" (${contract.kind}) is managed by the host and cannot be written via ctx.bindings`);
+    }
+    if (value === null || value === undefined)
+      return "";
+    if (contract.multiple) {
+      if (!Array.isArray(value) || !value.every((item) => typeof item === "string")) {
+        throw new Error(`Binding "${name}" expects an array of strings`);
+      }
+      return value.map((item) => item.trim()).filter(Boolean);
+    }
+    if (typeof value !== "string")
+      throw new Error(`Binding "${name}" expects a string`);
+    return value.trim();
+  };
+  return Object.freeze({
+    get,
+    require: requireBinding,
+    readAll,
+    set: async (name, value) => {
+      const normalized = normalizeWrite(name, value);
+      await patchConfig({ [name]: normalized });
+    },
+    patch: async (values) => {
+      if (!values || typeof values !== "object" || Array.isArray(values)) {
+        throw new Error("Bindings patch must be an object");
+      }
+      const next = {};
+      for (const [name, val] of Object.entries(values)) {
+        next[name] = normalizeWrite(name, val);
+      }
+      if (Object.keys(next).length > 0)
+        await patchConfig(next);
+    }
+  });
+}
+
+// ../../../sdk/runtime/src/note.ts
+var SINGLETON_COLLECTION_PREFIX = "singleton--";
+var STATE_COLLECTION_NAME = `${SINGLETON_COLLECTION_PREFIX}--state`;
+var singletonIdentifier = /^[A-Za-z][A-Za-z\d_-]*$/;
 var modelKey = Symbol.for("worka.note-model.v3");
 function mode(raw, expected) {
   if (raw.executionKind !== expected)
@@ -5902,6 +6162,21 @@ function mode(raw, expected) {
 }
 function identity(raw) {
   return Object.freeze({ id: raw.note.id, version: raw.note.version ?? "unknown" });
+}
+function actionIdentity(raw) {
+  const dir = raw.note.directory?.replace(/\/+$/, "");
+  return Object.freeze({
+    id: raw.note.id,
+    version: raw.note.version ?? "unknown",
+    asset: (relativePath) => {
+      if (typeof relativePath !== "string" || !relativePath.trim() || relativePath !== relativePath.trim() || relativePath.startsWith("/") || /[\\\0]/.test(relativePath) || relativePath.split("/").some((part) => !part || part === "." || part === "..")) {
+        throw new Error(`Invalid note asset path: ${String(relativePath)}`);
+      }
+      if (!dir)
+        throw new Error("This host does not expose note package asset paths");
+      return `${dir}/${relativePath}`;
+    }
+  });
 }
 function data(raw) {
   if (!raw.data)
@@ -5933,17 +6208,32 @@ function collectionAccess(note, raw, writable) {
       throw new Error("Invalid record id");
     return id;
   };
-  const parse = (name, value) => {
-    if (!value || typeof value !== "object" || Array.isArray(value) || Object.hasOwn(value, "id"))
-      throw new Error("Business values must be objects without the system id");
+  const stripId = (value, id, message) => {
+    if (!value || typeof value !== "object" || Array.isArray(value))
+      throw new Error(message);
+    const record = value;
+    if (!Object.hasOwn(record, "id"))
+      return record;
+    if (id === undefined || record.id !== id)
+      throw new Error("Document id does not match the write target");
+    const { id: _id, ...business } = record;
+    return business;
+  };
+  const parse = (name, value, id) => {
+    value = stripId(value, id, "Business values must be objects");
     assertJson(value);
     const parsed = declared(name).schema.parse(value);
     assertJson(parsed);
     return parsed;
   };
   const get = async (name, id) => {
-    declared(name);
-    return freezeJson(await data(raw).get(name, key(id)));
+    const def = declared(name);
+    const k = key(id);
+    const stored = await data(raw).get(name, k);
+    if (stored !== null && stored !== undefined)
+      return freezeJson(stored);
+    const fallback = def.defaults && Object.hasOwn(def.defaults, k) ? def.defaults[k] : undefined;
+    return fallback !== undefined ? freezeJson({ ...fallback, id: k }) : null;
   };
   const page = async (name, options = {}) => {
     const request = validatePageOptions(declared(name), options);
@@ -6080,23 +6370,27 @@ function collectionAccess(note, raw, writable) {
       revision
     });
   };
-  const read = { get, page, list, find };
+  const count = async (name, options = {}) => {
+    const request = validatePageOptions(declared(name), options);
+    assertJson(request);
+    return data(raw).count(name, request);
+  };
+  const read = { get, page, list, find, count };
   if (!writable)
     return Object.freeze(read);
   return Object.freeze({
     ...read,
     insert: async (name, value) => writer(raw).insert(name, parse(name, value)),
-    put: async (name, id, value) => writer(raw).put(name, key(id), parse(name, value)),
+    put: async (name, id, value) => writer(raw).put(name, key(id), parse(name, value, key(id))),
     patch: async (name, id, patch) => {
       declared(name);
-      if (!patch || typeof patch !== "object" || Array.isArray(patch) || Object.hasOwn(patch, "id"))
-        throw new Error("A patch must be a business object without id");
-      assertJson(patch);
+      const businessPatch = stripId(patch, id, "A patch must be a business object");
+      assertJson(businessPatch);
       const row = await get(name, id);
       if (!row)
         throw new Error(`Record not found: ${id}`);
       const { id: _id, ...value } = row;
-      await writer(raw).put(name, key(id), parse(name, { ...value, ...patch }));
+      await writer(raw).put(name, key(id), parse(name, { ...value, ...businessPatch }));
     },
     delete: async (name, id) => {
       declared(name);
@@ -6116,12 +6410,105 @@ function configAccess(note, raw, writable) {
     await writer(raw).patchConfig(patch);
   } } : {} }) };
 }
+function singletonAccess(note, raw, writable) {
+  const definition = noteDefinition(note);
+  const singletons = definition?.singletons ?? {};
+  const declared = (name) => {
+    if (!Object.hasOwn(singletons, name))
+      throw new Error(`Unknown singleton: ${name}`);
+    return singletons[name];
+  };
+  const collectionName = (name) => `${SINGLETON_COLLECTION_PREFIX}${name}`;
+  const get = async (name) => {
+    const def = declared(name);
+    const stored = await data(raw).get(collectionName(name), "current");
+    if (stored !== null && stored !== undefined && typeof stored === "object" && !Array.isArray(stored)) {
+      const { id: _id, ...business } = stored;
+      return freezeJson(business);
+    }
+    return freezeJson(def.initial);
+  };
+  if (!writable)
+    return Object.freeze({ get });
+  const parse = (name, value) => {
+    if (!value || typeof value !== "object" || Array.isArray(value))
+      throw new Error("Singleton values must be objects");
+    assertJson(value);
+    const parsed = declared(name).schema.parse(value);
+    assertJson(parsed);
+    return parsed;
+  };
+  return Object.freeze({
+    get,
+    put: async (name, value) => writer(raw).put(collectionName(name), "current", parse(name, value)),
+    patch: async (name, patch) => {
+      declared(name);
+      if (!patch || typeof patch !== "object" || Array.isArray(patch))
+        throw new Error("A singleton patch must be an object");
+      assertJson(patch);
+      const current = await get(name);
+      await writer(raw).put(collectionName(name), "current", parse(name, { ...current, ...patch }));
+    }
+  });
+}
+function bindingsAccess(note, raw, writable) {
+  const definition = noteDefinition(note);
+  const contracts = definition?.bindingContracts;
+  const readConfig = async () => {
+    const cfg = await data(raw).getConfig();
+    return cfg && typeof cfg === "object" && !Array.isArray(cfg) ? cfg : {};
+  };
+  if (!writable)
+    return createBindingsAccess(contracts, readConfig);
+  return createBindingsAccess(contracts, readConfig, async (patch) => {
+    assertJson(patch);
+    await writer(raw).patchConfig(patch);
+  });
+}
+function stateAccessHelper(note, raw, writable) {
+  const stateDef = noteDefinition(note)?.state;
+  if (!stateDef)
+    return {};
+  const get = async () => {
+    const stored = await data(raw).get(STATE_COLLECTION_NAME, "current");
+    if (stored !== null && stored !== undefined && typeof stored === "object" && !Array.isArray(stored)) {
+      const { id: _id, ...business } = stored;
+      return freezeJson(business);
+    }
+    return freezeJson(stateDef.initial);
+  };
+  if (!writable)
+    return { state: Object.freeze({ get }) };
+  const parse = (value) => {
+    if (!value || typeof value !== "object" || Array.isArray(value))
+      throw new Error("State value must be an object");
+    assertJson(value);
+    const parsed = stateDef.schema.parse(value);
+    assertJson(parsed);
+    return parsed;
+  };
+  return {
+    state: Object.freeze({
+      get,
+      put: async (value) => writer(raw).put(STATE_COLLECTION_NAME, "current", parse(value)),
+      patch: async (patch) => {
+        if (!patch || typeof patch !== "object" || Array.isArray(patch))
+          throw new Error("State patch must be an object");
+        assertJson(patch);
+        const current = await get();
+        await writer(raw).put(STATE_COLLECTION_NAME, "current", parse({ ...current, ...patch }));
+      }
+    })
+  };
+}
 function bindQueryContext(note, raw) {
   mode(raw, "query");
   return Object.freeze({
     note: identity(raw),
     signal: raw.signal,
     db: collectionAccess(note, raw, false),
+    singletons: singletonAccess(note, raw, false),
+    bindings: bindingsAccess(note, raw, false),
     notes: Object.freeze({ lookup: async (query) => {
       if (!query || typeof query.id !== "string" || !query.id || Object.keys(query).some((key) => key !== "id"))
         throw new Error("A query may look up one note by id only");
@@ -6136,6 +6523,7 @@ function bindQueryContext(note, raw) {
         throw new Error("This host does not provide published resource snapshots");
       return resources.read(request);
     } }),
+    ...stateAccessHelper(note, raw, false),
     ...configAccess(note, raw, false)
   });
 }
@@ -6156,6 +6544,8 @@ function bindMutationContext(note, raw) {
     signal: raw.signal,
     caller: raw.caller,
     db: collectionAccess(note, raw, true),
+    singletons: singletonAccess(note, raw, true),
+    bindings: bindingsAccess(note, raw, true),
     events: Object.freeze({ publish: (...args) => {
       const events = raw.events;
       if (!events)
@@ -6166,6 +6556,7 @@ function bindMutationContext(note, raw) {
       runAfter: (afterMs, ref, input) => schedule({ afterMs }, ref, input),
       runAt: (at, ref, input) => schedule({ at }, ref, input)
     }),
+    ...stateAccessHelper(note, raw, true),
     ...configAccess(note, raw, true)
   });
 }
@@ -6180,14 +6571,23 @@ function bindActionContext(note, raw) {
   };
   const action = raw;
   const { agent, notifications, previews, extensions, subprocess } = action;
+  const submitJob = (kind, request, options) => {
+    const onComplete = operationTarget(options.onComplete, note, ["mutation", "action"]);
+    assertJson(request);
+    if (!raw.jobs)
+      throw new Error("This host does not provide managed tasks");
+    const output = options.output ? toJSONSchema(options.output, { io: "output", unrepresentable: "throw" }) : undefined;
+    return raw.jobs[kind]({ request, onComplete, ...options.title ? { title: options.title } : {}, ...options.dedupeKey ? { dedupeKey: options.dedupeKey } : {}, ...options.cooldownMs !== undefined ? { cooldownMs: options.cooldownMs } : {}, ...output ? { output } : {} });
+  };
   return Object.freeze({
-    note: identity(raw),
+    note: actionIdentity(raw),
     signal: raw.signal,
     progress: action.progress,
     caller: action.caller,
     ...action.replay ? { replay: true } : {},
     id: () => crypto.randomUUID(),
     idempotencyKey: action.caller?.requestId ?? `execution:${action.caller?.id ?? crypto.randomUUID()}`,
+    bindings: bindingsAccess(note, raw, false),
     files: action.files,
     notes: action.notes,
     notify: action.notify,
@@ -6210,13 +6610,7 @@ function bindActionContext(note, raw) {
       return raw.decide(request);
     },
     jobs: Object.freeze({
-      infer: (request, options) => {
-        const onComplete = operationTarget(options.onComplete, note, ["mutation", "action"]);
-        assertJson(request);
-        if (!raw.jobs)
-          throw new Error("This host does not provide managed tasks");
-        return raw.jobs.infer({ request, onComplete });
-      },
+      infer: (request, options) => submitJob("infer", request, options),
       result: (taskId) => {
         if (!raw.jobs)
           throw new Error("This host does not provide managed tasks");
@@ -6227,26 +6621,92 @@ function bindActionContext(note, raw) {
           throw new Error("This host does not provide managed tasks");
         return raw.jobs.cancel(taskId);
       },
-      runAgent: (request, options) => {
-        const onComplete = operationTarget(options.onComplete, note, ["mutation", "action"]);
-        assertJson(request);
-        if (!raw.jobs)
-          throw new Error("This host does not provide managed tasks");
-        return raw.jobs.runAgent({ request, onComplete });
-      }
+      runAgent: (request, options) => submitJob("runAgent", request, options)
     }),
     runQuery: (reference, input) => invoke("query", reference, input),
     runMutation: (reference, input) => invoke("mutation", reference, input)
   });
 }
 function defineNote(definition) {
-  if (!definition || typeof definition !== "object" || Object.keys(definition).some((key) => !["collections", "config", "resources", "update", "records"].includes(key)))
-    throw new Error("ABI 4 notes use native collections; state/background and unknown model fields are unsupported");
+  if (!definition || typeof definition !== "object" || Object.keys(definition).some((key) => !["state", "collections", "singletons", "bindings", "config", "resources", "update", "records"].includes(key)))
+    throw new Error("ABI 4 notes support only state, collections, bindings, singletons, config, resources, records, and update");
   if (definition.update && Object.keys(definition.update).some((key) => !["dataVersion", "checks"].includes(key)))
     throw new Error("Model update accepts only dataVersion and checks");
-  const collections = collectionSchemas(definition.collections);
+  for (const name of Object.keys(definition.collections ?? {})) {
+    if (name.startsWith(SINGLETON_COLLECTION_PREFIX))
+      throw new Error(`Collection name ${name} uses reserved prefix ${SINGLETON_COLLECTION_PREFIX}`);
+  }
+  let normalizedState;
+  if (definition.state !== undefined) {
+    const sdef = definition.state;
+    if (!sdef || typeof sdef !== "object" || Array.isArray(sdef) || Object.keys(sdef).some((k) => !["schema", "initial", "scope"].includes(k)) || !(sdef.schema instanceof ZodObject)) {
+      throw new Error('Invalid state declaration: expected { schema: z.object(...), initial: {...}, scope?: "content" | "cache" }');
+    }
+    if (Object.hasOwn(sdef.schema.shape, "id"))
+      throw new Error("Note state: id is a system field");
+    if (sdef.scope !== undefined && sdef.scope !== "content" && sdef.scope !== "cache")
+      throw new Error("Invalid scope for note state");
+    assertJson(sdef.initial);
+    const parsedInitial = sdef.schema.parse(sdef.initial);
+    assertJson(parsedInitial);
+    normalizedState = Object.freeze({ schema: sdef.schema, initial: freezeJson(parsedInitial), ...sdef.scope ? { scope: sdef.scope } : {} });
+  }
+  const singletonEntries = [];
+  if (definition.singletons !== undefined) {
+    if (!definition.singletons || typeof definition.singletons !== "object" || Array.isArray(definition.singletons))
+      throw new Error("Invalid singletons declaration");
+    const entries = Object.entries(definition.singletons);
+    if (entries.length > 16)
+      throw new Error("A note may declare at most 16 singletons");
+    for (const [name, sdef] of entries) {
+      if (!singletonIdentifier.test(name) || name.startsWith(SINGLETON_COLLECTION_PREFIX) || !sdef || typeof sdef !== "object" || Array.isArray(sdef) || Object.keys(sdef).some((k) => !["schema", "initial", "scope"].includes(k)) || !(sdef.schema instanceof ZodObject)) {
+        throw new Error(`Invalid singleton declaration: ${name}`);
+      }
+      if (Object.hasOwn(sdef.schema.shape, "id"))
+        throw new Error(`Singleton ${name}: id is a system field`);
+      if (sdef.scope !== undefined && sdef.scope !== "content" && sdef.scope !== "cache")
+        throw new Error(`Invalid scope for singleton ${name}`);
+      assertJson(sdef.initial);
+      const parsedInitial = sdef.schema.parse(sdef.initial);
+      assertJson(parsedInitial);
+      singletonEntries.push([name, Object.freeze({ schema: sdef.schema, initial: freezeJson(parsedInitial), ...sdef.scope ? { scope: sdef.scope } : {} })]);
+    }
+  }
+  const bindingContracts = normalizeBindingsDeclarations(definition.bindings);
+  const mergedDeclarations = {
+    ...definition.collections ?? {},
+    ...normalizedState ? { [STATE_COLLECTION_NAME]: { schema: normalizedState.schema, ...normalizedState.scope ? { scope: normalizedState.scope } : {}, defaults: { current: normalizedState.initial } } } : {},
+    ...Object.fromEntries(singletonEntries.map(([name, sdef]) => [
+      `${SINGLETON_COLLECTION_PREFIX}${name}`,
+      { schema: sdef.schema, ...sdef.scope ? { scope: sdef.scope } : {}, defaults: { current: sdef.initial } }
+    ]))
+  };
+  const userCollections = collectionSchemas(definition.collections);
+  const allCollections = collectionSchemas(mergedDeclarations);
   if (definition.config && !(definition.config.schema instanceof ZodObject))
     throw new Error("Config schema must be an object");
+  let effectiveConfig;
+  const bindingConfigShape = {};
+  if (bindingContracts) {
+    for (const [key, contract] of Object.entries(bindingContracts)) {
+      if (contract.kind === "path" || contract.kind === "note") {
+        bindingConfigShape[key] = contract.multiple ? array(string2()).optional() : string2().optional();
+      }
+    }
+  }
+  if (definition.config) {
+    const extraShape = Object.fromEntries(Object.entries(bindingConfigShape).filter(([key]) => !Object.hasOwn(definition.config.schema.shape, key)));
+    const mergedSchema = Object.keys(extraShape).length ? definition.config.schema.extend(extraShape) : definition.config.schema;
+    effectiveConfig = Object.freeze({
+      schema: mergedSchema,
+      defaults: freezeJson(mergedSchema.partial().parse(definition.config.defaults))
+    });
+  } else if (Object.keys(bindingConfigShape).length > 0) {
+    effectiveConfig = Object.freeze({
+      schema: looseObject(bindingConfigShape),
+      defaults: freezeJson({})
+    });
+  }
   if (definition.resources && definition.resources.length > 32)
     throw new Error("A note may declare at most 32 resource needs");
   const records = validateRecordRouting(definition.records);
@@ -6255,23 +6715,44 @@ function defineNote(definition) {
       throw Error(`Unknown record routing collection: ${source.collection}`);
   const captured = Object.freeze({
     ...definition,
+    ...normalizedState ? { state: normalizedState } : {},
+    ...bindingContracts ? { bindingContracts } : {},
     ...records.length ? { records: freezeJson(records) } : {},
-    collections: Object.freeze(Object.fromEntries(collections.map((item) => [item.name, item.definition]))),
-    ...definition.config ? { config: Object.freeze({ schema: definition.config.schema, defaults: freezeJson(definition.config.schema.partial().parse(definition.config.defaults)) }) } : {},
+    collections: Object.freeze(Object.fromEntries(allCollections.map((item) => [item.name, item.definition]))),
+    ...singletonEntries.length ? { singletons: Object.freeze(Object.fromEntries(singletonEntries)) } : {},
+    ...effectiveConfig ? { config: effectiveConfig } : {},
     ...definition.resources ? { resources: freezeJson(definition.resources) } : {}
   });
-  const build = (kind, metadata, run) => operation(kind, { ...metadata, visibility: metadata.visibility ?? (kind === "query" ? "public" : "private"), model: note }, async (raw, input) => {
-    mode(raw, kind);
-    if (kind === "action" && metadata.requiresConfig !== false && captured.config) {
-      if (!captured.config.schema.safeParse(await data(raw).getConfig()).success)
-        throw new OperationRejectedError("Complete this note’s configuration before running this action");
+  const build = (kind, metadata, run) => {
+    if (metadata.requiresBindings?.length) {
+      if (kind !== "action")
+        throw new Error("requiresBindings may only be declared on actions; queries and mutations remain unblocked");
+      for (const name of metadata.requiresBindings) {
+        if (!captured.bindingContracts || !Object.hasOwn(captured.bindingContracts, name)) {
+          throw new Error(`Action requires undeclared binding: ${name}`);
+        }
+      }
     }
-    const context = kind === "query" ? bindQueryContext(note, raw) : kind === "mutation" ? bindMutationContext(note, raw) : bindActionContext(note, raw);
-    return run(context, input);
-  });
+    return operation(kind, { ...metadata, visibility: metadata.visibility ?? (kind === "query" ? "public" : "private"), model: note }, async (raw, input) => {
+      mode(raw, kind);
+      if (kind === "action" && metadata.requiresConfig !== false && captured.config) {
+        if (!captured.config.schema.safeParse(await data(raw).getConfig()).success)
+          throw new OperationRejectedError("Complete this note’s configuration before running this action");
+      }
+      if (kind === "action" && metadata.requiresBindings?.length) {
+        const cfg = await data(raw).getConfig();
+        const missing = missingBindingNames(captured.bindingContracts, cfg && typeof cfg === "object" && !Array.isArray(cfg) ? cfg : {}, metadata.requiresBindings);
+        if (missing.length) {
+          throw new OperationRejectedError(`Missing required note bindings before running this action: ${missing.join(", ")}`);
+        }
+      }
+      const context = kind === "query" ? bindQueryContext(note, raw) : kind === "mutation" ? bindMutationContext(note, raw) : bindActionContext(note, raw);
+      return run(context, input);
+    });
+  };
   const note = {
     [modelKey]: captured,
-    collections: Object.freeze(Object.fromEntries(collections.map((item) => [item.name, item.model]))),
+    collections: Object.freeze(Object.fromEntries(userCollections.map((item) => [item.name, item.model]))),
     query: (metadata, run) => build("query", metadata, run),
     mutation: (metadata, run) => build("mutation", metadata, run),
     action: (metadata, run) => build("action", metadata, run),
@@ -6296,12 +6777,12 @@ async function checkNoteModel(note, name, raw) {
     throw new Error(`Unknown model check: ${name}`);
   return await check.run(bindQueryContext(note, raw)) === true;
 }
-// ../../../../sdk/runtime/src/preview-project.mjs
+// ../../../sdk/runtime/src/preview-project.mjs
 var compiled = Symbol.for("worka.preview.project");
-// ../../../../sdk/runtime/src/note-file-reference.ts
+// ../../../sdk/runtime/src/note-file-reference.ts
 var NOTE_FILE_MAX_BYTES = 20 * 1024 * 1024;
 var NOTE_FILE_MAX_WIRE_BYTES = Math.ceil(NOTE_FILE_MAX_BYTES / 3) * 4 + 1024 * 1024;
-// ../../../../sdk/runtime/src/sha256.ts
+// ../../../sdk/runtime/src/sha256.ts
 var K = new Uint32Array([
   1116352408,
   1899447441,
@@ -6369,14 +6850,29 @@ var K = new Uint32Array([
   3329325298
 ]);
 // model.ts
+var greetingStateSchema = object({ name: string2().trim().max(100) });
 var note = defineNote({
-  config: { schema: object({ name: string2().trim().min(1).max(100) }), defaults: {} },
-  update: { dataVersion: "example-greeting@1" }
+  state: {
+    schema: greetingStateSchema,
+    initial: { name: "" }
+  },
+  update: { dataVersion: "example-greeting@2" }
 });
-// ../../../../sdk/runtime/src/saved-media.ts
+
+// actions.ts
+var greeting = note.query({ description: "读取当前问候称呼。", output: greetingStateSchema }, (ctx) => ctx.state.get());
+var setName = note.mutation({ description: "更新问候称呼。", input: object({ name: string2().trim().max(100) }), output: greetingStateSchema }, async (ctx, { name }) => {
+  await ctx.state.put({ name });
+  return { name };
+});
+// ../../../sdk/runtime/src/saved-media.ts
 var SAVED_IMAGE_LIMITS = Object.freeze({ bytes: 512 * 1024, totalBytes: 2 * 1024 * 1024, count: 8, dimension: 1600 });
 var SAVED_FILE_LIMITS = Object.freeze({ bytes: 4 * 1024 * 1024, totalBytes: 8 * 1024 * 1024, count: 8 });
-// ../../../../sdk/runtime/src/note-read-projection.ts
+// ../../../sdk/runtime/src/note-palette.ts
+var LEGACY_NOTE_PALETTES = ["blue", "violet", "rose", "amber", "green", "teal"];
+var ACTIVE_NOTE_PALETTES = [...LEGACY_NOTE_PALETTES, "orange", "fuchsia"];
+var NOTE_PALETTES = [...LEGACY_NOTE_PALETTES, "orange", "lime", "cyan", "indigo", "fuchsia", "slate"];
+// ../../../sdk/runtime/src/note-read-projection.ts
 var NOTE_READ_TAGS = ["div", "section", "article", "p", "h1", "h2", "h3", "h4", "h5", "h6", "ul", "ol", "li", "dl", "dt", "dd", "blockquote", "pre", "code", "strong", "em", "s", "small", "span", "br", "hr", "table", "thead", "tbody", "tfoot", "tr", "th", "td", "figure", "figcaption"];
 var NOTE_READ_LIMITS = { nodes: 4096, depth: 32, text: 128 * 1024, bytes: 3 * 1024 * 1024 };
 var tags = new Set(NOTE_READ_TAGS);
