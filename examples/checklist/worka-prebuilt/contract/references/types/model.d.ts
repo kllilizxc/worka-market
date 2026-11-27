@@ -6,4 +6,4 @@ export declare const note: import("@dsh-workbench/runtime").NoteModel<{
             done: z.ZodBoolean;
         }, z.core.$strip>;
     };
-}, undefined>;
+}, undefined, {}, undefined, {}>;

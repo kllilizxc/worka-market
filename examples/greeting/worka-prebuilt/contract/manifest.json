@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "codeVersion": "707c446a5881-3d1eadc4",
+  "codeVersion": "1",
   "status": "ready",
   "files": [
     "SKILL.md",
@@ -15,6 +15,8 @@
     "description": "用配置的称呼显示问候。"
   },
   "typeErrors": [
-    "view.tsx:2:44: error TS2305: Module '\"@dsh-workbench/react\"' has no exported member 'useMessages'."
+    "view.tsx:3:24: error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.",
+    "view.tsx:4:23: error TS2307: Cannot find module '@/components/ui/input' or its corresponding type declarations.",
+    "view.tsx:21:78: error TS7006: Parameter 'e' implicitly has an 'any' type."
   ]
 }

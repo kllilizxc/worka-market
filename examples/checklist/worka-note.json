@@ -1,5 +1,5 @@
 {
-  "version": "1.0.2",
+  "version": "0.2.0",
   "onboarding": {
     "title": "开始使用",
     "description": "记下接下来要做的事，完成后勾选。",
@@ -30,7 +30,6 @@
     "third-party-note/tw-animate-css@1.4.0/LICENSE",
     "third-party-note/zod@4.6.1/LICENSE",
     "view.tsx",
-    "worka-prebuilt/view-gm22wa37.js",
     "worka-prebuilt/contract/references/types/model.d.ts",
     "worka-prebuilt/contract/references/types/view.d.ts",
     "worka-prebuilt/contract/references/types/actions.d.ts",
@@ -43,6 +42,7 @@
     "worka-prebuilt/view-runtime-57ccjbv6.js",
     "worka-prebuilt/view-runtime.mjs",
     "worka-prebuilt/entry-bundle.tailwind.css",
+    "worka-prebuilt/view-jpbhw10b.js",
     "worka-prebuilt/actions.mjs",
     "worka-prebuilt/manifest.json"
   ]

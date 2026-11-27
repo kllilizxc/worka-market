@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "codeVersion": "f396ecfa1038-a22fdce5",
+  "codeVersion": "1",
   "status": "ready",
   "files": [
     "SKILL.md",
@@ -15,8 +15,6 @@
     "description": "记录和读取简单计数。"
   },
   "typeErrors": [
-    "view.tsx:3:35: error TS2305: Module '\"@dsh-workbench/react\"' has no exported member 'Toolbar'.",
-    "view.tsx:3:44: error TS2305: Module '\"@dsh-workbench/react\"' has no exported member 'useMessages'.",
-    "view.tsx:3:69: error TS2305: Module '\"@dsh-workbench/react\"' has no exported member 'Stat'."
+    "view.tsx:2:24: error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations."
   ]
 }

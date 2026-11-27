@@ -1,5 +1,5 @@
 {
-  "version": "1.0.2",
+  "version": "0.2.0",
   "onboarding": {
     "title": "开始使用",
     "description": "记录重复的小事：每次点击加一，随时清零。",
@@ -41,8 +41,8 @@
     "worka-prebuilt/entry-bundle.js",
     "worka-prebuilt/view-runtime-57ccjbv6.js",
     "worka-prebuilt/view-runtime.mjs",
+    "worka-prebuilt/view-j0ywzgzt.js",
     "worka-prebuilt/entry-bundle.tailwind.css",
-    "worka-prebuilt/view-rqtgjjg4.js",
     "worka-prebuilt/actions.mjs",
     "worka-prebuilt/manifest.json"
   ]
